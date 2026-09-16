@@ -11,13 +11,12 @@ from __future__ import annotations
 
 import os
 import re
-from typing import Union
 
 from truagent import Agent, Memory, OpenAICompatibleClient, ToolError, tool
 
 
 @tool
-def calculator(expr: str) -> Union[int, float]:
+def calculator(expr: str) -> int | float:
     """Evaluate a basic arithmetic expression safely.
 
     :param expr: A math expression like "2 + 3 * 4".
