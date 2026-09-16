@@ -205,6 +205,6 @@ MIT — see [LICENSE](LICENSE).
 
 <div align="center">
 
-**Built with ❤️ for the open-source AI community.**
+By bittu sharma
 
 </div>
