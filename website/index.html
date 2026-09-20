@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TruAgent — the zero-dependency Python agent framework</title>
+  <meta name="description" content="TruAgent is a tiny, dependency-free Python framework for building LLM agents: a clean agent loop, automatic tool schemas, any OpenAI-compatible backend, retries, hooks and memory — on the standard library alone.">
+  <meta name="keywords" content="llm, agent, framework, python, zero-dependency, tools, openai, ollama, hooks, retries, memory">
+  <meta name="author" content="Bittu Sharma">
+  <link rel="canonical" href="https://honeyamn10-source.github.io/truagent/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="TruAgent">
+  <meta property="og:title" content="TruAgent — the zero-dependency Python agent framework">
+  <meta property="og:description" content="Build, test and ship LLM agents on the Python standard library alone. No requests, no httpx, no pydantic, no SDKs.">
+  <meta property="og:url" content="https://honeyamn10-source.github.io/truagent/">
+  <meta property="og:image" content="https://honeyamn10-source.github.io/truagent/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="TruAgent — the zero-dependency Python agent framework">
+  <meta name="twitter:description" content="Build, test and ship LLM agents on the Python standard library alone.">
+  <meta name="twitter:image" content="https://honeyamn10-source.github.io/truagent/og.png">
+  <meta name="twitter:creator" content="@honeyamn10-source">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#071310">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="assets/site.css">
+  <link rel="sitemap" type="application/xml" href="sitemap.xml">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareSourceCode",
+    "name": "TruAgent",
+    "codeRepository": "https://github.com/honeyamn10-source/truagent",
+    "programmingLanguage": "Python",
+    "runtimePlatform": "Python 3.9+",
+    "description": "Zero-dependency Python framework for building LLM agents with automatic tool schemas, retries, hooks and memory.",
+    "author": { "@type": "Person", "name": "Bittu Sharma" },
+    "license": "https://github.com/honeyamn10-source/truagent/blob/main/LICENSE"
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top" aria-label="TruAgent home">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#34d399"/><text x="32" y="45" font-family="ui-monospace,Consolas,monospace" font-size="34" font-weight="700" fill="#071310" text-anchor="middle">t</text></svg>
+        truagent
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#features">Features</a>
+        <a href="#concepts">Concepts</a>
+        <a href="#design">Design</a>
+        <a href="#install">Install</a>
+        <a href="#docs">Docs</a>
+        <a href="https://github.com/honeyamn10-source/truagent" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="Switch theme">☀️</button>
+      <button class="nav-burger" type="button" aria-expanded="false" aria-label="Toggle navigation">☰</button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top">
+      <div class="wrap">
+        <div class="hero-grid">
+          <div class="hero-inner">
+            <span class="status"><span class="dot" aria-hidden="true"></span> v1.0.0 · Python 3.9+ · MIT · Production/Stable</span>
+            <h1>LLM agents on the Python standard library alone.</h1>
+            <p class="lede">TruAgent is a tiny, dependency-free framework for building agents in Python. A clean think → call → observe → answer loop, automatic tool schemas, any OpenAI-compatible backend, and built-in retries, hooks and memory.</p>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="#install">Install</a>
+              <a class="btn btn-ghost" href="https://github.com/honeyamn10-source/truagent" target="_blank" rel="noopener">View on GitHub</a>
+            </div>
+          </div>
+          <div class="code" role="img" aria-label="TruAgent agent definition with an add tool and a calculator reply">
+            <div class="code-head"><span>truagent/example.py</span></div>
+<pre><code><span class="k">from</span> truagent <span class="k">import</span> Agent, Memory, OpenAICompatibleClient, tool
+
+<span class="fn">@tool</span>
+<span class="k">def</span> <span class="fn">add</span>(a: <span class="t">int</span>, b: <span class="t">int</span>) -&gt; <span class="t">int</span>:
+    <span class="s">"""Add two numbers."""</span>
+    <span class="k">return</span> a + b
+
+agent = <span class="fn">Agent</span>(
+    llm=<span class="fn">OpenAICompatibleClient</span>(
+        base_url=<span class="s">"http://localhost:11434/v1"</span>,  <span class="c"># Ollama</span>
+        model=<span class="s">"qwen2.5"</span>,
+    ),
+    tools=[add],
+    memory=<span class="fn">Memory</span>(system=<span class="s">"You are a precise calculator."</span>),
+)
+
+<span class="fn">print</span>(agent.<span class="fn">run</span>(<span class="s">"What is 12345 + 54321?"</span>))
+<span class="c"># agent: calls add(12345, 54321) -&gt; 66666</span></code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ METRICS ============ -->
+    <section class="section section-soft">
+      <div class="wrap">
+        <div class="metrics" data-reveal>
+          <div class="metric"><b>0</b><span>runtime dependencies (stdlib only)</span></div>
+          <div class="metric"><b>~1,500</b><span>lines of Python, readable end to end</span></div>
+          <div class="metric"><b>108</b><span>tests passing, hermetic (no network)</span></div>
+          <div class="metric"><b>3.9</b><span>minimum Python, no upper bound</span></div>
+          <div class="metric"><b>any</b><span>OpenAI-compatible backend</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FEATURES ============ -->
+    <section class="section" id="features">
+      <div class="wrap">
+        <span class="eyebrow">Capabilities</span>
+        <h2>Everything an agent needs, with zero magic</h2>
+        <p class="lede">Each capability is a small module (<code>agent.py</code>, <code>clients.py</code>, <code>memory.py</code>, <code>middleware.py</code>, <code>parse.py</code>, <code>tools.py</code>) covered by its own test file.</p>
+        <div class="grid grid-3" style="margin-top:34px">
+          <article class="card" data-reveal>
+            <span class="ico" aria-hidden="true">🔄</span>
+            <h3>The agent loop</h3>
+            <p>A clean think → call a tool → observe → answer cycle driven by <code>Agent</code>, with a <code>max_steps</code> guard so agents cannot run wild.</p>
+          </article>
+          <article class="card" data-reveal>
+            <span class="ico" aria-hidden="true">🏷️</span>
+            <h3>Automatic tool schemas</h3>
+            <p>Decorate a function with <code>@tool</code> and the JSON schema is reflected from type annotations and docstrings — descriptions, defaults, required vs optional. No hand-written schema.</p>
+          </article>
+          <article class="card" data-reveal>
+            <span class="ico" aria-hidden="true">🧩</span>
+            <h3>Any model backend</h3>
+            <p>OpenAI, Ollama, Anthropic, vLLM, LM Studio, Groq, Together — anything speaking the OpenAI-compatible protocol. Local backends need no API key.</p>
+          </article>
+          <article class="card" data-reveal>
+            <span class="ico" aria-hidden="true">🧠</span>
+            <h3>Memory</h3>
+            <p>Ordered conversation history with a stable system prompt, so context survives across turns.</p>
+          </article>
+          <article class="card" data-reveal>
+            <span class="ico" aria-hidden="true">↻</span>
+            <h3>Retries with backoff</h3>
+            <p><code>RetryPolicy</code> applies exponential backoff to transient failures — network blips don't kill a run.</p>
+          </article>
+          <article class="card" data-reveal>
+            <span class="ico" aria-hidden="true">👀</span>
+            <h3>Hooks</h3>
+            <p>Observe every step and every message (<code>on_step</code>, <code>on_message</code>) for logging, tracing or streaming.</p>
+          </article>
+          <article class="card" data-reveal>
+            <span class="ico" aria-hidden="true">✍️</span>
+            <h3>Bring your own backend</h3>
+            <p><code>BaseLLM</code> is a single method: write a working chat backend in ~20 lines.</p>
+          </article>
+          <article class="card" data-reveal>
+            <span class="ico" aria-hidden="true">⌘</span>
+            <h3>A real CLI</h3>
+            <p><code>truagent run "…" --model … --base-url … --max-steps N</code> runs agents without touching Python code.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONCEPTS ============ -->
+    <section class="section section-soft" id="concepts">
+      <div class="wrap">
+        <span class="eyebrow">Core concepts</span>
+        <h2>Six moving parts you can hold in your head</h2>
+        <div class="ftable" style="margin-top:26px; max-width:760px">
+          <table class="ftable">
+            <thead><tr><th>Concept</th><th>What it is</th></tr></thead>
+            <tbody>
+              <tr><td><code>Agent</code></td><td>Drives the loop: prompt → model → tool calls → answer.</td></tr>
+              <tr><td><code>@tool</code></td><td>Turns any Python function into an LLM-callable capability.</td></tr>
+              <tr><td><code>Memory</code></td><td>Ordered conversation history with a stable system prompt.</td></tr>
+              <tr><td><code>BaseLLM</code></td><td>The interface every backend implements (write your own in ~20 lines).</td></tr>
+              <tr><td><code>RetryPolicy</code></td><td>Exponential backoff for transient failures.</td></tr>
+              <tr><td><code>Hooks</code></td><td>Observe every step and message in the loop.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="note" style="margin-top:22px"><strong>One dependency is worth a lot here.</strong> A framework that ships with zero runtime dependencies installs in seconds, works offline, has a tiny honest supply-chain surface and never locks you into a vendor — for you or your users.</div>
+      </div>
+    </section>
+
+    <!-- ============ DESIGN ============ -->
+    <section class="section" id="design">
+      <div class="wrap">
+        <span class="eyebrow">Internals &amp; tests</span>
+        <h2>Small modules, exact responsibilities</h2>
+        <div class="ftable" style="margin-top:26px">
+          <table class="ftable">
+            <thead><tr><th>Module</th><th>Responsibility</th></tr></thead>
+            <tbody>
+              <tr><td><code>agent.py</code></td><td>The loop, step counting, tool dispatch and answer assembling.</td></tr>
+              <tr><td><code>clients.py</code></td><td><code>OpenAICompatibleClient</code> (stdlib <code>urllib</code>), default headers and retry scheduling.</td></tr>
+              <tr><td><code>tools.py</code></td><td>Schema reflection from type hints and docstrings.</td></tr>
+              <tr><td><code>memory.py</code></td><td>Messages, system prompt and history helpers.</td></tr>
+              <tr><td><code>middleware.py</code></td><td>Retries and hooks wired into the loop.</td></tr>
+              <tr><td><code>parse.py</code></td><td>Robust JSON/tool-call extraction from model output.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="grid" style="grid-template-columns:1fr 1fr; gap:22px; margin-top:30px">
+          <div class="card">
+            <h3>Verified test suite</h3>
+            <p>108 tests across six modules — the agent loop, tool schema reflection, memory, retries, hooks, JSON parsing and the HTTP client — all hermetic (no network). The suite passes cleanly from a fresh install.</p>
+            <div class="tag-row"><span class="tag">pytest 108/108</span><span class="tag">0.46s</span><span class="tag">offline</span></div>
+          </div>
+          <div class="card">
+            <h3>Try it instantly</h3>
+<pre><code>pip install -e ".[dev]"
+pytest            # 108 passing, no network needed
+
+python examples/calculator_agent.py   # safe arithmetic agent
+truagent run "what is 12 * 13" --model qwen2.5 \
+  --base-url http://localhost:11434/v1</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ INSTALL ============ -->
+    <section class="section section-soft" id="install">
+      <div class="wrap">
+        <span class="eyebrow">Installation</span>
+        <h2>Installation is the whole point</h2>
+        <div class="grid" style="grid-template-columns:1fr 1fr; gap:22px; margin-top:30px">
+          <div class="card">
+            <h3>Install from source (verified)</h3>
+<pre><code>git clone https://github.com/honeyamn10-source/truagent.git
+cd truagent
+python -m venv .venv &amp;&amp; source .venv/bin/activate
+pip install -e .
+truagent version</code></pre>
+          </div>
+          <div class="card">
+            <h3>Zero-dependency guarantee</h3>
+            <p style="margin:0 0 12px">No <code>requests</code>, no <code>httpx</code>, no <code>pydantic</code>, no SDKs. The framework uses only the Python standard library — auditable, offline-friendly and secure by construction.</p>
+<pre><code>pip install -e ".[dev]"
+pip check        # no broken dependencies
+pytest           # 108 passing</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DOCS ============ -->
+    <section class="section" id="docs">
+      <div class="wrap">
+        <span class="eyebrow">Documentation</span>
+        <h2>Readable code is the documentation</h2>
+        <div class="ftable" style="margin-top:24px">
+          <table class="ftable">
+            <thead><tr><th>Where</th><th>What you will find</th></tr></thead>
+            <tbody>
+              <tr><td><code>README.md</code></td><td>Quick start, core concepts, zero-dependency rationale, examples.</td></tr>
+              <tr><td><code>examples/calculator_agent.py</code></td><td>A safe arithmetic agent with a full tokenizer/parser.</td></tr>
+              <tr><td><code>tests/</code></td><td>108 hermetic tests across six modules.</td></tr>
+              <tr><td><code>CHANGELOG.md</code></td><td>Release history.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="btn-row">
+          <a class="btn btn-ghost" href="https://github.com/honeyamn10-source/truagent/blob/main/README.md" target="_blank" rel="noopener">Read the README</a>
+          <a class="btn btn-ghost" href="https://github.com/honeyamn10-source/truagent/tree/main/tests" target="_blank" rel="noopener">Test suite</a>
+          <a class="btn btn-ghost" href="https://github.com/honeyamn10-source/truagent/blob/main/CHANGELOG.md" target="_blank" rel="noopener">CHANGELOG</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <h4>TruAgent</h4>
+          <p class="bio">A zero-dependency Python framework for LLM agents: clean loop, automatic tool schemas, any OpenAI-compatible backend, retries, hooks and memory. MIT licensed. Made by Jawagall AI Contributors.</p>
+        </div>
+        <div>
+          <h4>Project</h4>
+          <ul>
+            <li><a href="https://github.com/honeyamn10-source/truagent" target="_blank" rel="noopener">GitHub repository</a></li>
+            <li><a href="https://github.com/honeyamn10-source/truagent/issues" target="_blank" rel="noopener">Issue tracker</a></li>
+            <li><a href="https://github.com/honeyamn10-source/truagent/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">Contributing</a></li>
+            <li><a href="https://github.com/honeyamn10-source/truagent/blob/main/SECURITY.md" target="_blank" rel="noopener">Security policy</a></li>
+            <li><a href="https://github.com/honeyamn10-source/truagent/blob/main/LICENSE" target="_blank" rel="noopener">License (MIT)</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Ecosystem</h4>
+          <ul>
+            <li><a href="https://github.com/honeyamn10-source" target="_blank" rel="noopener">GitHub profile</a></li>
+            <li><a href="https://honeyamn10-source.github.io/" target="_blank" rel="noopener">Project directory</a></li>
+            <li><a href="https://honeyamn10-source.github.io/jawa-quant-computer/" target="_blank" rel="noopener">Jawa Quant Computer</a></li>
+            <li><a href="https://honeyamn10-source.github.io/envguard/" target="_blank" rel="noopener">envguard</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Releases</h4>
+          <ul>
+            <li><a href="https://github.com/honeyamn10-source/truagent/blob/main/CHANGELOG.md" target="_blank" rel="noopener">CHANGELOG</a></li>
+            <li><a href="https://github.com/honeyamn10-source/truagent/releases" target="_blank" rel="noopener">Releases</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-base">
+        <span>Built by <a href="https://github.com/honeyamn10-source" target="_blank" rel="noopener">Bittu Sharma</a> · honeyamn10-source</span>
+        <span>© 2026 Bittu Sharma · MIT License</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/site.js"></script>
+</body>
+</html>
