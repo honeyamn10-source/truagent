@@ -52,7 +52,7 @@ jobs:
             type=sha,prefix={{branch}}-
       
       - name: Build and push
-        uses: docker/build-push-action@v4
+        uses: docker/build-push-action@v7
         with:
           context: ${{ matrix.service.path }}
           push: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
@@ -99,7 +99,7 @@ jobs:
             type=sha,prefix={{branch}}-
       
       - name: Build and push
-        uses: docker/build-push-action@v4
+        uses: docker/build-push-action@v7
         with:
           context: ${{ matrix.service.path }}
           push: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
