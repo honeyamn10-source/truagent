@@ -1,0 +1,2983 @@
+{
+  "results": {
+    "config": {
+      "initial_cash": 1000000.0,
+      "execution_delay": 1,
+      "execution_mode": "next_open",
+      "profile": "optimistic",
+      "max_leverage": 2.0,
+      "max_position_weight": 1.0,
+      "rebalance_tolerance": 0.005,
+      "borrow_rate_year": 0.0,
+      "commission_bps": 5.0,
+      "min_commission": 1.0,
+      "participation_cap": 0.1,
+      "dividends_per_bar": {},
+      "latency_ms": 0.0,
+      "allow_same_bar": false,
+      "seed": 0
+    },
+    "n_bars": 60,
+    "signals": [
+      {
+        "type": "SIGNAL",
+        "ts": 0,
+        "bar_index": 0,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 86400000,
+        "bar_index": 1,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 172800000,
+        "bar_index": 2,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 259200000,
+        "bar_index": 3,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 345600000,
+        "bar_index": 4,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 432000000,
+        "bar_index": 5,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 518400000,
+        "bar_index": 6,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 604800000,
+        "bar_index": 7,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 691200000,
+        "bar_index": 8,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 777600000,
+        "bar_index": 9,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 864000000,
+        "bar_index": 10,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 950400000,
+        "bar_index": 11,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 1036800000,
+        "bar_index": 12,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 1123200000,
+        "bar_index": 13,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 1209600000,
+        "bar_index": 14,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 1296000000,
+        "bar_index": 15,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 1382400000,
+        "bar_index": 16,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 1468800000,
+        "bar_index": 17,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 1555200000,
+        "bar_index": 18,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 1641600000,
+        "bar_index": 19,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 1728000000,
+        "bar_index": 20,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 1814400000,
+        "bar_index": 21,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 1900800000,
+        "bar_index": 22,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 1987200000,
+        "bar_index": 23,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 2073600000,
+        "bar_index": 24,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 2160000000,
+        "bar_index": 25,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 2246400000,
+        "bar_index": 26,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 2332800000,
+        "bar_index": 27,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 2419200000,
+        "bar_index": 28,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 2505600000,
+        "bar_index": 29,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 2592000000,
+        "bar_index": 30,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 2678400000,
+        "bar_index": 31,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 2764800000,
+        "bar_index": 32,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 2851200000,
+        "bar_index": 33,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 2937600000,
+        "bar_index": 34,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 3024000000,
+        "bar_index": 35,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 3110400000,
+        "bar_index": 36,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 3196800000,
+        "bar_index": 37,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 3283200000,
+        "bar_index": 38,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 3369600000,
+        "bar_index": 39,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 3456000000,
+        "bar_index": 40,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 3542400000,
+        "bar_index": 41,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 3628800000,
+        "bar_index": 42,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 3715200000,
+        "bar_index": 43,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 3801600000,
+        "bar_index": 44,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 3888000000,
+        "bar_index": 45,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 3974400000,
+        "bar_index": 46,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 4060800000,
+        "bar_index": 47,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 4147200000,
+        "bar_index": 48,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 4233600000,
+        "bar_index": 49,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 4320000000,
+        "bar_index": 50,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 4406400000,
+        "bar_index": 51,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 4492800000,
+        "bar_index": 52,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 4579200000,
+        "bar_index": 53,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 4665600000,
+        "bar_index": 54,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 4752000000,
+        "bar_index": 55,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 4838400000,
+        "bar_index": 56,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 4924800000,
+        "bar_index": 57,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 5011200000,
+        "bar_index": 58,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      },
+      {
+        "type": "SIGNAL",
+        "ts": 5097600000,
+        "bar_index": 59,
+        "symbol": "SYN",
+        "target_weight": 1.0,
+        "reason": "hold",
+        "params": {}
+      }
+    ],
+    "orders": [
+      {
+        "type": "ORDER",
+        "ts": 0,
+        "bar_index": 0,
+        "order_id": 1,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 10000.0,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 2
+      },
+      {
+        "type": "ORDER",
+        "ts": 86400000,
+        "bar_index": 1,
+        "order_id": 2,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 9845.342142740768,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 3
+      },
+      {
+        "type": "ORDER",
+        "ts": 172800000,
+        "bar_index": 2,
+        "order_id": 3,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 10027.117806627291,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 4
+      },
+      {
+        "type": "ORDER",
+        "ts": 259200000,
+        "bar_index": 3,
+        "order_id": 4,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 9984.208404026664,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 5
+      },
+      {
+        "type": "ORDER",
+        "ts": 345600000,
+        "bar_index": 4,
+        "order_id": 5,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 10018.19534406879,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 6
+      },
+      {
+        "type": "ORDER",
+        "ts": 432000000,
+        "bar_index": 5,
+        "order_id": 6,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 10047.563708440504,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 7
+      },
+      {
+        "type": "ORDER",
+        "ts": 518400000,
+        "bar_index": 6,
+        "order_id": 7,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 10053.23173506757,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 8
+      },
+      {
+        "type": "ORDER",
+        "ts": 604800000,
+        "bar_index": 7,
+        "order_id": 8,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 10193.521916684549,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 9
+      },
+      {
+        "type": "ORDER",
+        "ts": 691200000,
+        "bar_index": 8,
+        "order_id": 9,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 10204.60882673681,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 10
+      },
+      {
+        "type": "ORDER",
+        "ts": 777600000,
+        "bar_index": 9,
+        "order_id": 10,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 10260.944711517126,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 11
+      },
+      {
+        "type": "ORDER",
+        "ts": 864000000,
+        "bar_index": 10,
+        "order_id": 11,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 9999.128008844837,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 12
+      },
+      {
+        "type": "ORDER",
+        "ts": 950400000,
+        "bar_index": 11,
+        "order_id": 12,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 9975.706583984056,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 13
+      },
+      {
+        "type": "ORDER",
+        "ts": 1036800000,
+        "bar_index": 12,
+        "order_id": 13,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 9992.202855524403,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 14
+      },
+      {
+        "type": "ORDER",
+        "ts": 1123200000,
+        "bar_index": 13,
+        "order_id": 14,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 10001.114370783764,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 15
+      },
+      {
+        "type": "ORDER",
+        "ts": 1209600000,
+        "bar_index": 14,
+        "order_id": 15,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 10039.259633989044,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 16
+      },
+      {
+        "type": "ORDER",
+        "ts": 1296000000,
+        "bar_index": 15,
+        "order_id": 16,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 10106.226820572781,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 17
+      },
+      {
+        "type": "ORDER",
+        "ts": 1382400000,
+        "bar_index": 16,
+        "order_id": 17,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 10121.61388669481,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 18
+      },
+      {
+        "type": "ORDER",
+        "ts": 1468800000,
+        "bar_index": 17,
+        "order_id": 18,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 10068.196900603114,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 19
+      },
+      {
+        "type": "ORDER",
+        "ts": 1555200000,
+        "bar_index": 18,
+        "order_id": 19,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 10072.312771168667,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 20
+      },
+      {
+        "type": "ORDER",
+        "ts": 1641600000,
+        "bar_index": 19,
+        "order_id": 20,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 9986.501997590933,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 21
+      },
+      {
+        "type": "ORDER",
+        "ts": 1728000000,
+        "bar_index": 20,
+        "order_id": 21,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 9990.982775690036,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 22
+      },
+      {
+        "type": "ORDER",
+        "ts": 1814400000,
+        "bar_index": 21,
+        "order_id": 22,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 9973.363132125723,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 23
+      },
+      {
+        "type": "ORDER",
+        "ts": 1900800000,
+        "bar_index": 22,
+        "order_id": 23,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 9844.248672344778,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 24
+      },
+      {
+        "type": "ORDER",
+        "ts": 1987200000,
+        "bar_index": 23,
+        "order_id": 24,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 9795.204414878788,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 25
+      },
+      {
+        "type": "ORDER",
+        "ts": 2073600000,
+        "bar_index": 24,
+        "order_id": 25,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 9823.301314326412,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 26
+      },
+      {
+        "type": "ORDER",
+        "ts": 2160000000,
+        "bar_index": 25,
+        "order_id": 26,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 9823.379697370196,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 27
+      },
+      {
+        "type": "ORDER",
+        "ts": 2246400000,
+        "bar_index": 26,
+        "order_id": 27,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 9768.095543796959,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 28
+      },
+      {
+        "type": "ORDER",
+        "ts": 2332800000,
+        "bar_index": 27,
+        "order_id": 28,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 9615.9045386288,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 29
+      },
+      {
+        "type": "ORDER",
+        "ts": 2419200000,
+        "bar_index": 28,
+        "order_id": 29,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 9623.658317605445,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 30
+      },
+      {
+        "type": "ORDER",
+        "ts": 2505600000,
+        "bar_index": 29,
+        "order_id": 30,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 9629.971493187186,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 31
+      },
+      {
+        "type": "ORDER",
+        "ts": 2592000000,
+        "bar_index": 30,
+        "order_id": 31,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 9539.40195794966,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 32
+      },
+      {
+        "type": "ORDER",
+        "ts": 2678400000,
+        "bar_index": 31,
+        "order_id": 32,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 9590.052091958858,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 33
+      },
+      {
+        "type": "ORDER",
+        "ts": 2764800000,
+        "bar_index": 32,
+        "order_id": 33,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 9598.294231605796,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 34
+      },
+      {
+        "type": "ORDER",
+        "ts": 2851200000,
+        "bar_index": 33,
+        "order_id": 34,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 9520.761016772265,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 35
+      },
+      {
+        "type": "ORDER",
+        "ts": 2937600000,
+        "bar_index": 34,
+        "order_id": 35,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 9469.522027660032,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 36
+      },
+      {
+        "type": "ORDER",
+        "ts": 3024000000,
+        "bar_index": 35,
+        "order_id": 36,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 9455.723216934824,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 37
+      },
+      {
+        "type": "ORDER",
+        "ts": 3110400000,
+        "bar_index": 36,
+        "order_id": 37,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 9395.59153744251,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 38
+      },
+      {
+        "type": "ORDER",
+        "ts": 3196800000,
+        "bar_index": 37,
+        "order_id": 38,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 9589.317778023347,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 39
+      },
+      {
+        "type": "ORDER",
+        "ts": 3283200000,
+        "bar_index": 38,
+        "order_id": 39,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 9505.147467125887,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 40
+      },
+      {
+        "type": "ORDER",
+        "ts": 3369600000,
+        "bar_index": 39,
+        "order_id": 40,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 9560.989611734847,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 41
+      },
+      {
+        "type": "ORDER",
+        "ts": 3456000000,
+        "bar_index": 40,
+        "order_id": 41,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 9672.79863668429,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 42
+      },
+      {
+        "type": "ORDER",
+        "ts": 3542400000,
+        "bar_index": 41,
+        "order_id": 42,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 9641.13597037849,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 43
+      },
+      {
+        "type": "ORDER",
+        "ts": 3628800000,
+        "bar_index": 42,
+        "order_id": 43,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 9575.723261678513,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 44
+      },
+      {
+        "type": "ORDER",
+        "ts": 3715200000,
+        "bar_index": 43,
+        "order_id": 44,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 9598.196896126517,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 45
+      },
+      {
+        "type": "ORDER",
+        "ts": 3801600000,
+        "bar_index": 44,
+        "order_id": 45,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 9665.226264045257,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 46
+      },
+      {
+        "type": "ORDER",
+        "ts": 3888000000,
+        "bar_index": 45,
+        "order_id": 46,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 9650.445553719874,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 47
+      },
+      {
+        "type": "ORDER",
+        "ts": 3974400000,
+        "bar_index": 46,
+        "order_id": 47,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 9648.728112044811,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 48
+      },
+      {
+        "type": "ORDER",
+        "ts": 4060800000,
+        "bar_index": 47,
+        "order_id": 48,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 9537.328419990332,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 49
+      },
+      {
+        "type": "ORDER",
+        "ts": 4147200000,
+        "bar_index": 48,
+        "order_id": 49,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 9470.116009670946,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 50
+      },
+      {
+        "type": "ORDER",
+        "ts": 4233600000,
+        "bar_index": 49,
+        "order_id": 50,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 9446.130056065318,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 51
+      },
+      {
+        "type": "ORDER",
+        "ts": 4320000000,
+        "bar_index": 50,
+        "order_id": 51,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 9358.70959418906,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 52
+      },
+      {
+        "type": "ORDER",
+        "ts": 4406400000,
+        "bar_index": 51,
+        "order_id": 52,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 9359.675529648432,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 53
+      },
+      {
+        "type": "ORDER",
+        "ts": 4492800000,
+        "bar_index": 52,
+        "order_id": 53,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 9409.16872659882,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 54
+      },
+      {
+        "type": "ORDER",
+        "ts": 4579200000,
+        "bar_index": 53,
+        "order_id": 54,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 9353.883377068169,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 55
+      },
+      {
+        "type": "ORDER",
+        "ts": 4665600000,
+        "bar_index": 54,
+        "order_id": 55,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 9302.438457728796,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 56
+      },
+      {
+        "type": "ORDER",
+        "ts": 4752000000,
+        "bar_index": 55,
+        "order_id": 56,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 9307.066152581181,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 57
+      },
+      {
+        "type": "ORDER",
+        "ts": 4838400000,
+        "bar_index": 56,
+        "order_id": 57,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 9349.557039193796,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 58
+      },
+      {
+        "type": "ORDER",
+        "ts": 4924800000,
+        "bar_index": 57,
+        "order_id": 58,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 9322.738500383675,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 59
+      },
+      {
+        "type": "ORDER",
+        "ts": 5011200000,
+        "bar_index": 58,
+        "order_id": 59,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 9487.366593015577,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 60
+      },
+      {
+        "type": "ORDER",
+        "ts": 5097600000,
+        "bar_index": 59,
+        "order_id": 60,
+        "symbol": "SYN",
+        "side": "BUY",
+        "quantity": 9424.790726337682,
+        "kind": "MARKET",
+        "limit_price": null,
+        "stop_price": null,
+        "eligible_from": 61
+      }
+    ],
+    "fills": [
+      {
+        "type": "FILL",
+        "ts": 172800000,
+        "bar_index": 2,
+        "order_id": 1,
+        "symbol": "SYN",
+        "quantity": 8.51766321949719,
+        "price": 101.57341263526781,
+        "commission": 1.0,
+        "partial": true
+      },
+      {
+        "type": "FILL",
+        "ts": 259200000,
+        "bar_index": 3,
+        "order_id": 2,
+        "symbol": "SYN",
+        "quantity": 9.713911171358873,
+        "price": 99.64576357021888,
+        "commission": 1.0,
+        "partial": true
+      },
+      {
+        "type": "FILL",
+        "ts": 345600000,
+        "bar_index": 4,
+        "order_id": 3,
+        "symbol": "SYN",
+        "quantity": 7.334673530685413,
+        "price": 99.97706333460195,
+        "commission": 1.0,
+        "partial": true
+      },
+      {
+        "type": "FILL",
+        "ts": 432000000,
+        "bar_index": 5,
+        "order_id": 4,
+        "symbol": "SYN",
+        "quantity": 3.363089307759549,
+        "price": 99.56469047024362,
+        "commission": 1.0,
+        "partial": true
+      },
+      {
+        "type": "FILL",
+        "ts": 518400000,
+        "bar_index": 6,
+        "order_id": 5,
+        "symbol": "SYN",
+        "quantity": 9.109491290246758,
+        "price": 99.24034264624089,
+        "commission": 1.0,
+        "partial": true
+      },
+      {
+        "type": "FILL",
+        "ts": 604800000,
+        "bar_index": 7,
+        "order_id": 6,
+        "symbol": "SYN",
+        "quantity": 12.585141336891065,
+        "price": 99.09446432761175,
+        "commission": 1.0,
+        "partial": true
+      },
+      {
+        "type": "FILL",
+        "ts": 691200000,
+        "bar_index": 8,
+        "order_id": 7,
+        "symbol": "SYN",
+        "quantity": 5.17138486980652,
+        "price": 97.60831169667712,
+        "commission": 1.0,
+        "partial": true
+      },
+      {
+        "type": "FILL",
+        "ts": 777600000,
+        "bar_index": 9,
+        "order_id": 8,
+        "symbol": "SYN",
+        "quantity": 8.937314942041334,
+        "price": 97.45279791220891,
+        "commission": 1.0,
+        "partial": true
+      },
+      {
+        "type": "FILL",
+        "ts": 864000000,
+        "bar_index": 10,
+        "order_id": 9,
+        "symbol": "SYN",
+        "quantity": 5.834386030387524,
+        "price": 96.83286691222555,
+        "commission": 1.0,
+        "partial": true
+      },
+      {
+        "type": "FILL",
+        "ts": 950400000,
+        "bar_index": 11,
+        "order_id": 10,
+        "symbol": "SYN",
+        "quantity": 4.794090247644001,
+        "price": 99.31183182329924,
+        "commission": 1.0,
+        "partial": true
+      },
+      {
+        "type": "FILL",
+        "ts": 1036800000,
+        "bar_index": 12,
+        "order_id": 11,
+        "symbol": "SYN",
+        "quantity": 8.52167735723349,
+        "price": 99.49727260426997,
+        "commission": 1.0,
+        "partial": true
+      },
+      {
+        "type": "FILL",
+        "ts": 1123200000,
+        "bar_index": 13,
+        "order_id": 12,
+        "symbol": "SYN",
+        "quantity": 10.747090497225638,
+        "price": 99.24815447541039,
+        "commission": 1.0,
+        "partial": true
+      },
+      {
+        "type": "FILL",
+        "ts": 1209600000,
+        "bar_index": 14,
+        "order_id": 13,
+        "symbol": "SYN",
+        "quantity": 10.83885448583551,
+        "price": 99.05306551489183,
+        "commission": 1.0,
+        "partial": true
+      },
+      {
+        "type": "FILL",
+        "ts": 1296000000,
+        "bar_index": 15,
+        "order_id": 14,
+        "symbol": "SYN",
+        "quantity": 11.729520694823991,
+        "price": 98.56975757822245,
+        "commission": 1.0,
+        "partial": true
+      },
+      {
+        "type": "FILL",
+        "ts": 1382400000,
+        "bar_index": 16,
+        "order_id": 15,
+        "symbol": "SYN",
+        "quantity": 12.867541939095526,
+        "price": 97.8021967070117,
+        "commission": 1.0,
+        "partial": true
+      },
+      {
+        "type": "FILL",
+        "ts": 1468800000,
+        "bar_index": 17,
+        "order_id": 16,
+        "symbol": "SYN",
+        "quantity": 15.0655262657463,
+        "price": 97.52917757900953,
+        "commission": 1.0,
+        "partial": true
+      },
+      {
+        "type": "FILL",
+        "ts": 1555200000,
+        "bar_index": 18,
+        "order_id": 17,
+        "symbol": "SYN",
+        "quantity": 12.434784407518205,
+        "price": 97.90067901461865,
+        "commission": 1.0,
+        "partial": true
+      },
+      {
+        "type": "FILL",
+        "ts": 1641600000,
+        "bar_index": 19,
+        "order_id": 18,
+        "symbol": "SYN",
+        "quantity": 11.649285694608905,
+        "price": 97.73980724354097,
+        "commission": 1.0,
+        "partial": true
+      },
+      {
+        "type": "FILL",
+        "ts": 1728000000,
+        "bar_index": 20,
+        "order_id": 19,
+        "symbol": "SYN",
+        "quantity": 9.014006080871697,
+        "price": 98.46563707538462,
+        "commission": 1.0,
+        "partial": true
+      },
+      {
+        "type": "FILL",
+        "ts": 1814400000,
+        "bar_index": 21,
+        "order_id": 20,
+        "symbol": "SYN",
+        "quantity": 14.206665220819117,
+        "price": 98.33263767577043,
+        "commission": 1.0,
+        "partial": true
+      },
+      {
+        "type": "FILL",
+        "ts": 1900800000,
+        "bar_index": 22,
+        "order_id": 21,
+        "symbol": "SYN",
+        "quantity": 11.825298695614883,
+        "price": 98.36628452427365,
+        "commission": 1.0,
+        "partial": true
+      },
+      {
+        "type": "FILL",
+        "ts": 1987200000,
+        "bar_index": 23,
+        "order_id": 22,
+        "symbol": "SYN",
+        "quantity": 7.037249017639614,
+        "price": 99.53826527107023,
+        "commission": 1.0,
+        "partial": true
+      },
+      {
+        "type": "FILL",
+        "ts": 2073600000,
+        "bar_index": 24,
+        "order_id": 23,
+        "symbol": "SYN",
+        "quantity": 7.794781595824834,
+        "price": 99.96513612145652,
+        "commission": 1.0,
+        "partial": true
+      },
+      {
+        "type": "FILL",
+        "ts": 2160000000,
+        "bar_index": 25,
+        "order_id": 24,
+        "symbol": "SYN",
+        "quantity": 11.93191827653932,
+        "price": 99.59988861998126,
+        "commission": 1.0,
+        "partial": true
+      },
+      {
+        "type": "FILL",
+        "ts": 2246400000,
+        "bar_index": 26,
+        "order_id": 25,
+        "symbol": "SYN",
+        "quantity": 13.732894392610206,
+        "price": 99.4781123656683,
+        "commission": 1.0,
+        "partial": true
+      },
+      {
+        "type": "FILL",
+        "ts": 2332800000,
+        "bar_index": 27,
+        "order_id": 26,
+        "symbol": "SYN",
+        "quantity": 8.947616753922091,
+        "price": 99.90126615835104,
+        "commission": 1.0,
+        "partial": true
+      },
+      {
+        "type": "FILL",
+        "ts": 2419200000,
+        "bar_index": 28,
+        "order_id": 27,
+        "symbol": "SYN",
+        "quantity": 10.315757407121666,
+        "price": 101.3894437361288,
+        "commission": 1.0,
+        "partial": true
+      },
+      {
+        "type": "FILL",
+        "ts": 2505600000,
+        "bar_index": 29,
+        "order_id": 28,
+        "symbol": "SYN",
+        "quantity": 9.874424382354043,
+        "price": 101.19907056100361,
+        "commission": 1.0,
+        "partial": true
+      },
+      {
+        "type": "FILL",
+        "ts": 2592000000,
+        "bar_index": 30,
+        "order_id": 29,
+        "symbol": "SYN",
+        "quantity": 16.490847985157824,
+        "price": 101.02895634475665,
+        "commission": 1.0,
+        "partial": true
+      },
+      {
+        "type": "FILL",
+        "ts": 2678400000,
+        "bar_index": 31,
+        "order_id": 30,
+        "symbol": "SYN",
+        "quantity": 11.885560539808786,
+        "price": 101.81349722500863,
+        "commission": 1.0,
+        "partial": true
+      },
+      {
+        "type": "FILL",
+        "ts": 2764800000,
+        "bar_index": 32,
+        "order_id": 31,
+        "symbol": "SYN",
+        "quantity": 11.380087974968554,
+        "price": 101.14957924467461,
+        "commission": 1.0,
+        "partial": true
+      },
+      {
+        "type": "FILL",
+        "ts": 2851200000,
+        "bar_index": 33,
+        "order_id": 32,
+        "symbol": "SYN",
+        "quantity": 12.282600773343614,
+        "price": 100.94279158041016,
+        "commission": 1.0,
+        "partial": true
+      },
+      {
+        "type": "FILL",
+        "ts": 2937600000,
+        "bar_index": 34,
+        "order_id": 33,
+        "symbol": "SYN",
+        "quantity": 8.094587803535475,
+        "price": 101.634600578448,
+        "commission": 1.0,
+        "partial": true
+      },
+      {
+        "type": "FILL",
+        "ts": 3024000000,
+        "bar_index": 35,
+        "order_id": 34,
+        "symbol": "SYN",
+        "quantity": 5.7528561879769775,
+        "price": 102.09765915882221,
+        "commission": 1.0,
+        "partial": true
+      },
+      {
+        "type": "FILL",
+        "ts": 3110400000,
+        "bar_index": 36,
+        "order_id": 35,
+        "symbol": "SYN",
+        "quantity": 10.91811456562587,
+        "price": 102.18453336413414,
+        "commission": 1.0,
+        "partial": true
+      },
+      {
+        "type": "FILL",
+        "ts": 3196800000,
+        "bar_index": 37,
+        "order_id": 36,
+        "symbol": "SYN",
+        "quantity": 7.616674644361012,
+        "price": 102.71976706981597,
+        "commission": 1.0,
+        "partial": true
+      },
+      {
+        "type": "FILL",
+        "ts": 3283200000,
+        "bar_index": 38,
+        "order_id": 37,
+        "symbol": "SYN",
+        "quantity": 8.98241480194319,
+        "price": 100.56300082310084,
+        "commission": 1.0,
+        "partial": true
+      },
+      {
+        "type": "FILL",
+        "ts": 3369600000,
+        "bar_index": 39,
+        "order_id": 38,
+        "symbol": "SYN",
+        "quantity": 11.757474517048497,
+        "price": 101.35847484395389,
+        "commission": 1.0,
+        "partial": true
+      },
+      {
+        "type": "FILL",
+        "ts": 3456000000,
+        "bar_index": 40,
+        "order_id": 39,
+        "symbol": "SYN",
+        "quantity": 7.916902294276929,
+        "price": 100.64183102716457,
+        "commission": 1.0,
+        "partial": true
+      },
+      {
+        "type": "FILL",
+        "ts": 3542400000,
+        "bar_index": 41,
+        "order_id": 40,
+        "symbol": "SYN",
+        "quantity": 9.96028419777371,
+        "price": 99.39612573430095,
+        "commission": 1.0,
+        "partial": true
+      },
+      {
+        "type": "FILL",
+        "ts": 3628800000,
+        "bar_index": 42,
+        "order_id": 41,
+        "symbol": "SYN",
+        "quantity": 13.040322001874054,
+        "price": 99.6198657538411,
+        "commission": 1.0,
+        "partial": true
+      },
+      {
+        "type": "FILL",
+        "ts": 3715200000,
+        "bar_index": 43,
+        "order_id": 42,
+        "symbol": "SYN",
+        "quantity": 8.22378882356051,
+        "price": 100.16471208164535,
+        "commission": 1.0,
+        "partial": true
+      },
+      {
+        "type": "FILL",
+        "ts": 3801600000,
+        "bar_index": 44,
+        "order_id": 43,
+        "symbol": "SYN",
+        "quantity": 9.774067541361084,
+        "price": 99.84435824953948,
+        "commission": 1.0,
+        "partial": true
+      },
+      {
+        "type": "FILL",
+        "ts": 3888000000,
+        "bar_index": 45,
+        "order_id": 44,
+        "symbol": "SYN",
+        "quantity": 11.342177708700959,
+        "price": 99.0509558073703,
+        "commission": 1.0,
+        "partial": true
+      },
+      {
+        "type": "FILL",
+        "ts": 3974400000,
+        "bar_index": 46,
+        "order_id": 45,
+        "symbol": "SYN",
+        "quantity": 4.032777155014866,
+        "price": 99.086245562027,
+        "commission": 1.0,
+        "partial": true
+      },
+      {
+        "type": "FILL",
+        "ts": 4060800000,
+        "bar_index": 47,
+        "order_id": 46,
+        "symbol": "SYN",
+        "quantity": 7.991857170702833,
+        "price": 99.06246751718217,
+        "commission": 1.0,
+        "partial": true
+      },
+      {
+        "type": "FILL",
+        "ts": 4147200000,
+        "bar_index": 48,
+        "order_id": 47,
+        "symbol": "SYN",
+        "quantity": 12.043890363369457,
+        "price": 100.13654351003545,
+        "commission": 1.0,
+        "partial": true
+      },
+      {
+        "type": "FILL",
+        "ts": 4233600000,
+        "bar_index": 49,
+        "order_id": 48,
+        "symbol": "SYN",
+        "quantity": 8.634285139325895,
+        "price": 100.71988955801201,
+        "commission": 1.0,
+        "partial": true
+      },
+      {
+        "type": "FILL",
+        "ts": 4320000000,
+        "bar_index": 50,
+        "order_id": 49,
+        "symbol": "SYN",
+        "quantity": 6.9480656084306105,
+        "price": 100.8835752792729,
+        "commission": 1.0,
+        "partial": true
+      },
+      {
+        "type": "FILL",
+        "ts": 4406400000,
+        "bar_index": 51,
+        "order_id": 50,
+        "symbol": "SYN",
+        "quantity": 12.080267380354927,
+        "price": 101.75103734137032,
+        "commission": 1.0,
+        "partial": true
+      },
+      {
+        "type": "FILL",
+        "ts": 4492800000,
+        "bar_index": 52,
+        "order_id": 51,
+        "symbol": "SYN",
+        "quantity": 14.649402057810594,
+        "price": 101.60920599288004,
+        "commission": 1.0,
+        "partial": true
+      },
+      {
+        "type": "FILL",
+        "ts": 4579200000,
+        "bar_index": 53,
+        "order_id": 52,
+        "symbol": "SYN",
+        "quantity": 12.404295978247191,
+        "price": 100.91652888634977,
+        "commission": 1.0,
+        "partial": true
+      },
+      {
+        "type": "FILL",
+        "ts": 4665600000,
+        "bar_index": 54,
+        "order_id": 53,
+        "symbol": "SYN",
+        "quantity": 8.90715861553076,
+        "price": 101.37915768019863,
+        "commission": 1.0,
+        "partial": true
+      },
+      {
+        "type": "FILL",
+        "ts": 4752000000,
+        "bar_index": 55,
+        "order_id": 54,
+        "symbol": "SYN",
+        "quantity": 8.999028977527393,
+        "price": 101.84273718103327,
+        "commission": 1.0,
+        "partial": true
+      },
+      {
+        "type": "FILL",
+        "ts": 4838400000,
+        "bar_index": 56,
+        "order_id": 55,
+        "symbol": "SYN",
+        "quantity": 11.195828857962619,
+        "price": 101.69362405096201,
+        "commission": 1.0,
+        "partial": true
+      },
+      {
+        "type": "FILL",
+        "ts": 4924800000,
+        "bar_index": 57,
+        "order_id": 56,
+        "symbol": "SYN",
+        "quantity": 9.172604163935898,
+        "price": 101.10967926081642,
+        "commission": 1.0,
+        "partial": true
+      },
+      {
+        "type": "FILL",
+        "ts": 5011200000,
+        "bar_index": 58,
+        "order_id": 57,
+        "symbol": "SYN",
+        "quantity": 11.074830246436381,
+        "price": 101.30105560439648,
+        "commission": 1.0,
+        "partial": true
+      },
+      {
+        "type": "FILL",
+        "ts": 5097600000,
+        "bar_index": 59,
+        "order_id": 58,
+        "symbol": "SYN",
+        "quantity": 11.775409001698117,
+        "price": 99.42499026707131,
+        "commission": 1.0,
+        "partial": true
+      }
+    ],
+    "rejects": [],
+    "portfolio_events": [
+      {
+        "type": "PORTFOLIO",
+        "ts": 0,
+        "bar_index": 0,
+        "equity": 1000000.0,
+        "cash": 1000000.0,
+        "positions": {},
+        "leverage": 0.0
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 86400000,
+        "bar_index": 1,
+        "equity": 1000000.0,
+        "cash": 1000000.0,
+        "positions": {},
+        "leverage": 0.0
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 172800000,
+        "bar_index": 2,
+        "equity": 999983.5597162626,
+        "cash": 999134.8318791178,
+        "positions": {
+          "SYN": 8.51766321949719
+        },
+        "leverage": 0.0008487417907006966
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 259200000,
+        "bar_index": 3,
+        "equity": 999989.575483416,
+        "cash": 998166.8817831944,
+        "positions": {
+          "SYN": 18.231574390856064
+        },
+        "leverage": 0.0018227127011203991
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 345600000,
+        "bar_index": 4,
+        "equity": 999979.0145880741,
+        "cash": 997433.5826630784,
+        "positions": {
+          "SYN": 25.56624792154148
+        },
+        "leverage": 0.0025454853430541373
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 432000000,
+        "bar_index": 5,
+        "equity": 999969.6232841528,
+        "cash": 997098.7377171275,
+        "positions": {
+          "SYN": 28.929337229301026
+        },
+        "leverage": 0.0028709727777495864
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 518400000,
+        "bar_index": 6,
+        "equity": 999964.0517823675,
+        "cash": 996194.7086801506,
+        "positions": {
+          "SYN": 38.038828519547785
+        },
+        "leverage": 0.003769478608254284
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 604800000,
+        "bar_index": 7,
+        "equity": 999888.787540037,
+        "cash": 994947.590840884,
+        "positions": {
+          "SYN": 50.62396985643885
+        },
+        "leverage": 0.004941746282913628
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 691200000,
+        "bar_index": 8,
+        "equity": 999880.0981912479,
+        "cash": 994442.8206946085,
+        "positions": {
+          "SYN": 55.795354726245364
+        },
+        "leverage": 0.0054379295142240065
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 777600000,
+        "bar_index": 9,
+        "equity": 999839.947632214,
+        "cash": 993571.854347684,
+        "positions": {
+          "SYN": 64.7326696682867
+        },
+        "leverage": 0.006269096668295793
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 864000000,
+        "bar_index": 10,
+        "equity": 1000014.8623902918,
+        "cash": 993006.8940216888,
+        "positions": {
+          "SYN": 70.56705569867422
+        },
+        "leverage": 0.007007864214989836
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 950400000,
+        "bar_index": 11,
+        "equity": 1000028.8251682344,
+        "cash": 992530.7841372691,
+        "positions": {
+          "SYN": 75.36114594631823
+        },
+        "leverage": 0.00749782490490095
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 1036800000,
+        "bar_index": 12,
+        "equity": 1000007.9077620932,
+        "cash": 991682.9004822108,
+        "positions": {
+          "SYN": 83.88282330355172
+        },
+        "leverage": 0.008324941448226045
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 1123200000,
+        "bar_index": 13,
+        "equity": 999989.4203070397,
+        "cash": 990616.2715843809,
+        "positions": {
+          "SYN": 94.62991380077736
+        },
+        "leverage": 0.009373247888743602
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 1209600000,
+        "bar_index": 14,
+        "equity": 999938.4208486985,
+        "cash": 989542.649820889,
+        "positions": {
+          "SYN": 105.46876828661287
+        },
+        "leverage": 0.010396411229989577
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 1296000000,
+        "bar_index": 15,
+        "equity": 999848.4373730901,
+        "cash": 988386.4738094915,
+        "positions": {
+          "SYN": 117.19828898143686
+        },
+        "leverage": 0.011463701032241157
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 1382400000,
+        "bar_index": 16,
+        "equity": 999812.8963400284,
+        "cash": 987127.9999416283,
+        "positions": {
+          "SYN": 130.0658309205324
+        },
+        "leverage": 0.012687270233095734
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 1468800000,
+        "bar_index": 17,
+        "equity": 999866.7747674045,
+        "cash": 985658.671555135,
+        "positions": {
+          "SYN": 145.1313571862787
+        },
+        "leverage": 0.014209996342337421
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 1555200000,
+        "bar_index": 18,
+        "equity": 999841.3970232422,
+        "cash": 984441.2977182387,
+        "positions": {
+          "SYN": 157.5661415937969
+        },
+        "leverage": 0.015402542194045181
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 1641600000,
+        "bar_index": 19,
+        "equity": 999964.1870936512,
+        "cash": 983302.6987799227,
+        "positions": {
+          "SYN": 169.2154272884058
+        },
+        "leverage": 0.016662085031419267
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 1728000000,
+        "bar_index": 20,
+        "equity": 999940.4610899232,
+        "cash": 982415.1289285682,
+        "positions": {
+          "SYN": 178.2294333692775
+        },
+        "leverage": 0.017526375662659553
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 1814400000,
+        "bar_index": 21,
+        "equity": 999946.9008727128,
+        "cash": 981018.1500648285,
+        "positions": {
+          "SYN": 192.4360985900966
+        },
+        "leverage": 0.018929755961405732
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 1900800000,
+        "bar_index": 22,
+        "equity": 1000186.2562334941,
+        "cash": 979854.9393687511,
+        "positions": {
+          "SYN": 204.2613972857115
+        },
+        "leverage": 0.02032753073543198
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 1987200000,
+        "bar_index": 23,
+        "equity": 1000276.4337000014,
+        "cash": 979154.4638092547,
+        "positions": {
+          "SYN": 211.29864630335112
+        },
+        "leverage": 0.021116132680060254
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 2073600000,
+        "bar_index": 24,
+        "equity": 1000196.3928937317,
+        "cash": 978375.2574059911,
+        "positions": {
+          "SYN": 219.09342789917596
+        },
+        "leverage": 0.0218168508132773
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 2160000000,
+        "bar_index": 25,
+        "equity": 1000168.23048604,
+        "cash": 977186.8396746251,
+        "positions": {
+          "SYN": 231.0253461757153
+        },
+        "leverage": 0.022977525291167207
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 2246400000,
+        "bar_index": 26,
+        "equity": 1000271.7641224257,
+        "cash": 975820.7172631312,
+        "positions": {
+          "SYN": 244.7582405683255
+        },
+        "leverage": 0.024444403747361898
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 2332800000,
+        "bar_index": 27,
+        "equity": 1000649.2917054979,
+        "cash": 974926.8390203146,
+        "positions": {
+          "SYN": 253.7058573222476
+        },
+        "leverage": 0.02570576214703764
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 2419200000,
+        "bar_index": 28,
+        "equity": 1000599.0041818656,
+        "cash": 973880.9301150898,
+        "positions": {
+          "SYN": 264.0216147293693
+        },
+        "leverage": 0.026702079409545058
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 2505600000,
+        "bar_index": 29,
+        "equity": 1000552.3867552105,
+        "cash": 972881.6475452706,
+        "positions": {
+          "SYN": 273.8960391117233
+        },
+        "leverage": 0.027655462698635867
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 2592000000,
+        "bar_index": 30,
+        "equity": 1000780.159793572,
+        "cash": 971215.59438409,
+        "positions": {
+          "SYN": 290.38688709688114
+        },
+        "leverage": 0.029541518304659602
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 2678400000,
+        "bar_index": 31,
+        "equity": 1000579.4504455981,
+        "cash": 970005.4838990526,
+        "positions": {
+          "SYN": 302.27244763668995
+        },
+        "leverage": 0.030556260707662597
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 2764800000,
+        "bar_index": 32,
+        "equity": 1000514.5638152563,
+        "cash": 968854.3927886172,
+        "positions": {
+          "SYN": 313.6525356116585
+        },
+        "leverage": 0.031643888226783635
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 2851200000,
+        "bar_index": 33,
+        "equity": 1000740.0120431782,
+        "cash": 967614.5527786881,
+        "positions": {
+          "SYN": 325.9351363850021
+        },
+        "leverage": 0.03310096415237648
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 2937600000,
+        "bar_index": 34,
+        "equity": 1000894.6629395364,
+        "cash": 966791.8625804286,
+        "positions": {
+          "SYN": 334.0297241885376
+        },
+        "leverage": 0.03407231711971659
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 3024000000,
+        "bar_index": 35,
+        "equity": 1000924.1658597835,
+        "cash": 966204.5094301588,
+        "positions": {
+          "SYN": 339.7825803765146
+        },
+        "leverage": 0.03468759933456196
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 3110400000,
+        "bar_index": 36,
+        "equity": 1001111.8401089053,
+        "cash": 965088.8469880541,
+        "positions": {
+          "SYN": 350.70069494214044
+        },
+        "leverage": 0.035982985794007286
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 3196800000,
+        "bar_index": 37,
+        "equity": 1000339.0330611694,
+        "cash": 964306.4639427387,
+        "positions": {
+          "SYN": 358.31736958650146
+        },
+        "leverage": 0.0360203570265236
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 3283200000,
+        "bar_index": 38,
+        "equity": 1000631.1806113619,
+        "cash": 963403.1653556174,
+        "positions": {
+          "SYN": 367.29978438844466
+        },
+        "leverage": 0.03720453247619071
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 3369600000,
+        "bar_index": 39,
+        "equity": 1000359.508569367,
+        "cash": 962211.4456705527,
+        "positions": {
+          "SYN": 379.05725890549314
+        },
+        "leverage": 0.03813435327202578
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 3456000000,
+        "bar_index": 40,
+        "equity": 999877.4449408612,
+        "cash": 961414.6741275935,
+        "positions": {
+          "SYN": 386.9741611997701
+        },
+        "leverage": 0.03846748519819105
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 3542400000,
+        "bar_index": 41,
+        "equity": 999966.2280915102,
+        "cash": 960424.6604671222,
+        "positions": {
+          "SYN": 396.9344453975438
+        },
+        "leverage": 0.039542903063691764
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 3628800000,
+        "bar_index": 42,
+        "equity": 1000189.5632777624,
+        "cash": 959125.5853399086,
+        "positions": {
+          "SYN": 409.9747673994179
+        },
+        "leverage": 0.04105619519092093
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 3715200000,
+        "bar_index": 43,
+        "equity": 1000055.574524078,
+        "cash": 958301.8519001764,
+        "positions": {
+          "SYN": 418.19855622297837
+        },
+        "leverage": 0.041751402309588695
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 3801600000,
+        "bar_index": 44,
+        "equity": 999716.0040913252,
+        "cash": 957325.9663990216,
+        "positions": {
+          "SYN": 427.97262376433946
+        },
+        "leverage": 0.04240207970946039
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 3888000000,
+        "bar_index": 45,
+        "equity": 999731.4789296767,
+        "cash": 956202.5128560377,
+        "positions": {
+          "SYN": 439.3148014730404
+        },
+        "leverage": 0.043540657657635796
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 3974400000,
+        "bar_index": 46,
+        "equity": 999720.9272650431,
+        "cash": 955802.920108559,
+        "positions": {
+          "SYN": 443.34757862805526
+        },
+        "leverage": 0.0439302668962143
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 4060800000,
+        "bar_index": 47,
+        "equity": 1000205.6682068116,
+        "cash": 955011.2270171843,
+        "positions": {
+          "SYN": 451.3394357987581
+        },
+        "leverage": 0.04518514804125529
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 4147200000,
+        "bar_index": 48,
+        "equity": 1000475.9441310897,
+        "cash": 953805.1934657826,
+        "positions": {
+          "SYN": 463.38332616212756
+        },
+        "leverage": 0.04664854856239499
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 4233600000,
+        "bar_index": 49,
+        "equity": 1000553.1830021655,
+        "cash": 952935.5492201373,
+        "positions": {
+          "SYN": 472.0176113014534
+        },
+        "leverage": 0.047591307079900766
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 4320000000,
+        "bar_index": 50,
+        "equity": 1000968.639645873,
+        "cash": 952234.6035202838,
+        "positions": {
+          "SYN": 478.96567690988405
+        },
+        "leverage": 0.048686876087177436
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 4406400000,
+        "bar_index": 51,
+        "equity": 1000898.9649497976,
+        "cash": 951005.4237829716,
+        "positions": {
+          "SYN": 491.045944290239
+        },
+        "leverage": 0.049848728906746895
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 4492800000,
+        "bar_index": 52,
+        "equity": 1000548.6529054517,
+        "cash": 949516.909671607,
+        "positions": {
+          "SYN": 505.6953463480496
+        },
+        "leverage": 0.05100375987280158
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 4579200000,
+        "bar_index": 53,
+        "equity": 1000788.3034318492,
+        "cash": 948265.1111782034,
+        "positions": {
+          "SYN": 518.0996423262968
+        },
+        "leverage": 0.05248182065431433
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 4665600000,
+        "bar_index": 54,
+        "equity": 1001032.5842995386,
+        "cash": 947362.110940437,
+        "positions": {
+          "SYN": 527.0068009418276
+        },
+        "leverage": 0.05361511123702032
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 4752000000,
+        "bar_index": 55,
+        "equity": 1000952.63787902,
+        "cash": 946445.6251973942,
+        "positions": {
+          "SYN": 536.0058299193549
+        },
+        "leverage": 0.05445513665574027
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 4838400000,
+        "bar_index": 56,
+        "equity": 1000633.0818465084,
+        "cash": 945307.0807865736,
+        "positions": {
+          "SYN": 547.2016587773176
+        },
+        "leverage": 0.05529099733324777
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 4924800000,
+        "bar_index": 57,
+        "equity": 1000739.5328713598,
+        "cash": 944379.6417215716,
+        "positions": {
+          "SYN": 556.3742629412535
+        },
+        "leverage": 0.0563182419586027
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 5011200000,
+        "bar_index": 58,
+        "equity": 999674.9598639591,
+        "cash": 943257.749726968,
+        "positions": {
+          "SYN": 567.4490931876899
+        },
+        "leverage": 0.05643555395712685
+      },
+      {
+        "type": "PORTFOLIO",
+        "ts": 5097600000,
+        "bar_index": 59,
+        "equity": 999985.3329575603,
+        "cash": 942086.9798015833,
+        "positions": {
+          "SYN": 579.224502189388
+        },
+        "leverage": 0.057899202366035324
+      }
+    ],
+    "equity_curve": [
+      [
+        0,
+        1000000.0
+      ],
+      [
+        86400000,
+        1000000.0
+      ],
+      [
+        172800000,
+        999983.5597162626
+      ],
+      [
+        259200000,
+        999989.575483416
+      ],
+      [
+        345600000,
+        999979.0145880741
+      ],
+      [
+        432000000,
+        999969.6232841528
+      ],
+      [
+        518400000,
+        999964.0517823675
+      ],
+      [
+        604800000,
+        999888.787540037
+      ],
+      [
+        691200000,
+        999880.0981912479
+      ],
+      [
+        777600000,
+        999839.947632214
+      ],
+      [
+        864000000,
+        1000014.8623902918
+      ],
+      [
+        950400000,
+        1000028.8251682344
+      ],
+      [
+        1036800000,
+        1000007.9077620932
+      ],
+      [
+        1123200000,
+        999989.4203070397
+      ],
+      [
+        1209600000,
+        999938.4208486985
+      ],
+      [
+        1296000000,
+        999848.4373730901
+      ],
+      [
+        1382400000,
+        999812.8963400284
+      ],
+      [
+        1468800000,
+        999866.7747674045
+      ],
+      [
+        1555200000,
+        999841.3970232422
+      ],
+      [
+        1641600000,
+        999964.1870936512
+      ],
+      [
+        1728000000,
+        999940.4610899232
+      ],
+      [
+        1814400000,
+        999946.9008727128
+      ],
+      [
+        1900800000,
+        1000186.2562334941
+      ],
+      [
+        1987200000,
+        1000276.4337000014
+      ],
+      [
+        2073600000,
+        1000196.3928937317
+      ],
+      [
+        2160000000,
+        1000168.23048604
+      ],
+      [
+        2246400000,
+        1000271.7641224257
+      ],
+      [
+        2332800000,
+        1000649.2917054979
+      ],
+      [
+        2419200000,
+        1000599.0041818656
+      ],
+      [
+        2505600000,
+        1000552.3867552105
+      ],
+      [
+        2592000000,
+        1000780.159793572
+      ],
+      [
+        2678400000,
+        1000579.4504455981
+      ],
+      [
+        2764800000,
+        1000514.5638152563
+      ],
+      [
+        2851200000,
+        1000740.0120431782
+      ],
+      [
+        2937600000,
+        1000894.6629395364
+      ],
+      [
+        3024000000,
+        1000924.1658597835
+      ],
+      [
+        3110400000,
+        1001111.8401089053
+      ],
+      [
+        3196800000,
+        1000339.0330611694
+      ],
+      [
+        3283200000,
+        1000631.1806113619
+      ],
+      [
+        3369600000,
+        1000359.508569367
+      ],
+      [
+        3456000000,
+        999877.4449408612
+      ],
+      [
+        3542400000,
+        999966.2280915102
+      ],
+      [
+        3628800000,
+        1000189.5632777624
+      ],
+      [
+        3715200000,
+        1000055.574524078
+      ],
+      [
+        3801600000,
+        999716.0040913252
+      ],
+      [
+        3888000000,
+        999731.4789296767
+      ],
+      [
+        3974400000,
+        999720.9272650431
+      ],
+      [
+        4060800000,
+        1000205.6682068116
+      ],
+      [
+        4147200000,
+        1000475.9441310897
+      ],
+      [
+        4233600000,
+        1000553.1830021655
+      ],
+      [
+        4320000000,
+        1000968.639645873
+      ],
+      [
+        4406400000,
+        1000898.9649497976
+      ],
+      [
+        4492800000,
+        1000548.6529054517
+      ],
+      [
+        4579200000,
+        1000788.3034318492
+      ],
+      [
+        4665600000,
+        1001032.5842995386
+      ],
+      [
+        4752000000,
+        1000952.63787902
+      ],
+      [
+        4838400000,
+        1000633.0818465084
+      ],
+      [
+        4924800000,
+        1000739.5328713598
+      ],
+      [
+        5011200000,
+        999674.9598639591
+      ],
+      [
+        5097600000,
+        999985.3329575603
+      ]
+    ],
+    "returns": [
+      0.0,
+      -1.6440283737373385e-05,
+      6.015866055975039e-06,
+      -1.0561005435283377e-05,
+      -9.391501005762137e-06,
+      -5.571671034321213e-06,
+      -7.526694804316225e-05,
+      -8.690315260406756e-06,
+      -4.0155373735806243e-05,
+      0.0001749427580803875,
+      1.3962570425407606e-05,
+      -2.091680321081313e-05,
+      -1.8487308860226648e-05,
+      -5.099999790558751e-05,
+      -8.998901705570272e-05,
+      -3.5546420570575776e-05,
+      5.3888510113564436e-05,
+      -2.538112556871308e-05,
+      0.00012280954836896285,
+      -2.372685345553016e-05,
+      6.440166230081701e-06,
+      0.00023936807101687663,
+      9.016067351974577e-05,
+      -8.001868640816756e-05,
+      -2.8156877880936015e-05,
+      0.00010351622180149178,
+      0.0003774250124948253,
+      -5.0254893546708423e-05,
+      -4.658951933822486e-05,
+      0.00022764728901436548,
+      -0.00020055288467679677,
+      -6.484905352877046e-05,
+      0.00022533228008403405,
+      0.0001545365374593377,
+      2.947654867146987e-05,
+      0.00018750096712927267,
+      -0.0007719487641378864,
+      0.0002920485360833336,
+      -0.0002715006760322103,
+      -0.0004818903847829681,
+      8.879403280692699e-05,
+      0.0002233427289624057,
+      -0.0001339633591508349,
+      -0.00033955156233633765,
+      1.547923439071397e-05,
+      -1.0554498738879481e-05,
+      0.0004848762575118126,
+      0.0002702203485436261,
+      7.720212717643449e-05,
+      0.00041522694721818354,
+      -6.960727171234637e-05,
+      -0.0003499974089427038,
+      0.00023951911354003208,
+      0.0002440884519250286,
+      -7.986395425341186e-05,
+      -0.0003192519010576378,
+      0.00010638367527793235,
+      -0.0010637863024619554,
+      0.0003104740101156356
+    ]
+  },
+  "validation": {
+    "metrics": {
+      "sharpe": -0.013500528806062517,
+      "sortino": -0.014285044040747803,
+      "calmar": -0.04364582261051428,
+      "omega": 0.9973330052091101,
+      "annualized_return": -6.264416998269517e-05,
+      "volatility": 0.004044541184989899,
+      "max_drawdown": 0.0014352844381401164,
+      "hit_rate": 0.4576271186440678,
+      "profit_factor": 0.9973330052091101,
+      "total_return": -1.4667042439575617e-05
+    },
+    "psr": {
+      "psr": 0.48031670237471497,
+      "n": 59,
+      "sr_hat": -0.0008504533759215517,
+      "skew": -1.5469267145032155,
+      "kurtosis": 7.574304348570166
+    },
+    "dsr": {
+      "dsr": 0.48031670237471497,
+      "sr_0": 0.0,
+      "n_trials": 1,
+      "n": 59
+    },
+    "bootstrap95": {
+      "lo": -3.2850543869458897,
+      "hi": 5.43152246205515,
+      "mean": 0.37699497013635686
+    }
+  },
+  "final_equity": 999985.3329575603,
+  "total_return": -1.466704243968664e-05,
+  "rejected_orders": 0
+}

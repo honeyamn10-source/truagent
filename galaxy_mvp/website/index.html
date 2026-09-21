@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>galaxy_mvp — decentralized AI platform</title>
+  <meta name="description" content="galaxy_mvp is a decentralized AI platform with 12+ services: authority chain, auth service, intelligence layer, economic layer, swarm nodes, edge computing. Kubernetes, Docker Compose, ADRs 0001-0005.">
+  <meta name="keywords" content="decentralized AI, distributed systems, multi-agent, blockchain, kubernetes, microservices, swarm intelligence, edge computing">
+  <meta name="author" content="Bittu Sharma">
+  <link rel="canonical" href="https://honeyamn10-source.github.io/galaxy_mvp/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="galaxy_mvp">
+  <meta property="og:title" content="galaxy_mvp — decentralized AI platform">
+  <meta property="og:description" content="Multi-service decentralized AI platform: authority chain, economic layer, swarm intelligence, edge computing. ADRs 0001-0005.">
+  <meta property="og:url" content="https://honeyamn10-source.github.io/galaxy_mvp/">
+  <meta property="og:image" content="https://honeyamn10-source.github.io/galaxy_mvp/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="galaxy_mvp — decentralized AI platform">
+  <meta name="twitter:description" content="Decentralized AI platform with 12+ services. Authority chain, economic layer, swarm nodes. ADRs 0001-0005.">
+  <meta name="twitter:image" content="https://honeyamn10-source.github.io/galaxy_mvp/og.png">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#a78bfa">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="assets/site.css">
+  <link rel="sitemap" type="application/xml" href="sitemap.xml">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "galaxy_mvp",
+    "url": "https://honeyamn10-source.github.io/galaxy_mvp/",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Linux, Kubernetes",
+    "description": "Decentralized AI platform with multi-service architecture.",
+    "author": { "@type": "Person", "name": "Bittu Sharma" },
+    "license": "https://github.com/honeyamn10-source/galaxy_mvp/blob/main/LICENSE",
+    "codeRepository": "https://github.com/honeyamn10-source/galaxy_mvp"
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top" aria-label="galaxy_mvp home">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#a78bfa"/><text x="32" y="45" font-family="ui-monospace,Consolas,monospace" font-size="34" font-weight="700" fill="#0b0e14" text-anchor="middle">g</text></svg>
+        galaxy_mvp
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#architecture">Architecture</a>
+        <a href="#services">Services</a>
+        <a href="#adr">ADRs</a>
+        <a href="#infra">Infrastructure</a>
+        <a href="https://github.com/honeyamn10-source/galaxy_mvp" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="Switch theme">☀️</button>
+      <button class="nav-burger" type="button" aria-expanded="false" aria-label="Toggle navigation">☰</button>
+    </div>
+    <div class="drawer-backdrop"></div>
+    <nav class="mobile-drawer" aria-label="Mobile navigation">
+      <a href="#architecture">Architecture</a>
+      <a href="#services">Services</a>
+      <a href="#adr">ADRs</a>
+      <a href="#infra">Infrastructure</a>
+      <a href="https://github.com/honeyamn10-source/galaxy_mvp" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="wrap">
+        <div class="hero-grid">
+          <div class="hero-inner">
+            <span class="status"><span class="dot" aria-hidden="true"></span> Active development · MIT · ADRs 0001-0005</span>
+            <h1>AI, decentralized.</h1>
+            <p class="lede">galaxy_mvp is a multi-service architecture for distributed AI workloads. Authority chains, economic incentives, swarm intelligence, and edge computing — all orchestrated for scalable, resilient AI.</p>
+            <div class="badge-row">
+              <span class="badge badge-b">12+ services</span>
+              <span class="badge badge-b">Kubernetes</span>
+              <span class="badge badge-b">ADRs 0001-0005</span>
+              <span class="badge badge-b">Docker Compose</span>
+            </div>
+            <div class="btn-row">
+              <a class="btn btn-primary btn-lg" href="#architecture">Explore Architecture</a>
+              <a class="btn btn-ghost btn-lg" href="https://github.com/honeyamn10-source/galaxy_mvp" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+          <div class="term" role="img" aria-label="Service topology">
+            <div class="term-bar"><i class="t1"></i><i class="t2"></i><i class="t3"></i><span>service topology</span></div>
+            <div class="term-body">
+<span class="c3">┌─────────────────────────────────────────────────────────────────┐</span>
+<span class="c3">│                     AUTHORITY CHAIN                              │</span>
+<span class="c3">│  Consensus • Governance • Access Control • Identity              │</span>
+<span class="c3">└──────────────────────────┬──────────────────────────────────────┘</span>
+<span class="c1">                           │</span>
+<span class="c1">        ┌──────────────────┼──────────────────┐</span>
+<span class="c1">        ▼                  ▼                  ▼</span>
+<span class="c3">┌───────────────┐ ┌───────────────┐ ┌───────────────┐</span>
+<span class="c3">│  AUTH SERVICE │ │  INTELLIGENCE │ │  ECONOMIC     │</span>
+<span class="c3">│  OAuth2/JWT   │ │  LAYER        │ │  LAYER        │</span>
+<span class="c3">│  DID Support  │ │  LLM Service  │ │  Tokenomics   │</span>
+<span class="c3">└───────┬───────┘ │  Model Registry│ │  Staking      │</span>
+<span class="c1">        │         │  Inference    │ │  Rewards      │</span>
+<span class="c1">        ▼         └───────┬───────┘ └───────┬───────┘</span>
+<span class="c1">        ▼                  ▼                  ▼</span>
+<span class="c3">┌───────────────┐ ┌───────────────┐ ┌───────────────┐</span>
+<span class="c3">│  SWARM NODE   │ │  EDGE PLANET  │ │  EXPANSION    │</span>
+<span class="c3">│  Workers      │ │  Cameras      │ │  LAYER        │</span>
+<span class="c3">│  Scheduler    │ │  Live Stream  │ │  Plugins      │</span>
+<span class="c3">│  Autoscaling  │ │  Local Infer  │ │  Marketplace  │</span>
+<span class="c3">└───────────────┘ └───────────────┘ └───────────────┘</span>
+<span class="c1">                           │</span>
+<span class="c1">                           ▼</span>
+<span class="c3">┌─────────────────────────────────────────────────────────────────┐</span>
+<span class="c3">│  SHARED INFRA: PostgreSQL • Redis • Kafka • Prometheus • Grafana │</span>
+<span class="c3">└─────────────────────────────────────────────────────────────────┘</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: var(--space-4);">
+      <div class="wrap">
+        <div class="stats-row">
+          <div class="stat"><div class="stat-value">12+</div><div class="stat-label">Services</div></div>
+          <div class="stat"><div class="stat-value">5</div><div class="stat-label">ADRs</div></div>
+          <div class="stat"><div class="stat-value">K8s</div><div class="stat-label">Orchestration</div></div>
+          <div class="stat"><div class="stat-value">Docker</div><div class="stat-label">Compose Ready</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="architecture" class="section reveal">
+      <div class="wrap">
+        <h2>Architecture Principles</h2>
+        <p class="lede">Decentralized by design. No single point of failure. Economic alignment built in.</p>
+        <div class="grid cards">
+          <article class="card"><h3>Authority Chain</h3><p>Consensus layer for governance, access control, and cross-service authentication. DID-based identity.</p></article>
+          <article class="card"><h3>Economic Alignment</h3><p>Tokenomics incentivize honest participation. Staking for validators, rewards for compute providers, slashing for misbehavior.</p></article>
+          <article class="card"><h3>Swarm Intelligence</h3><p>Distributed workers self-organize. Task decomposition, result aggregation, Byzantine fault tolerance.</p></article>
+          <article class="card"><h3>Edge-First</h3><p>Compute moves to data. Camera integration, local inference, bandwidth optimization. Cloud as fallback.</p></article>
+          <article class="card"><h3>Pluggable Expansion</h3><p>Plugin architecture for new AI capabilities. Marketplace for models, skills, workflows.</p></article>
+          <article class="card"><h3>Observable by Default</h3><p>Prometheus metrics, Grafana dashboards, distributed tracing, structured logging across all services.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section alt reveal">
+      <div class="wrap">
+        <h2>Core Services (12+)</h2>
+        <div class="grid cards" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+          <article class="card"><h4>authority-chain</h4><p>Consensus, governance, access control, DID registry</p></article>
+          <article class="card"><h4>auth-service</h4><p>OAuth2, OIDC, JWT, DID authentication, session management</p></article>
+          <article class="card"><h4>backend</h4><p>Core API gateway, service mesh, request routing</p></article>
+          <article class="card"><h4>llm-service</h4><p>Model inference, batch/streaming, multi-model routing</p></article>
+          <article class="card"><h4>models</h4><p>Model registry, versioning, A/B testing, artifact storage</p></article>
+          <article class="card"><h4>swarm-node</h4><p>Worker registration, task queue, autoscaling, health checks</p></article>
+          <article class="card"><h4>edge-planet</h4><p>Camera integration, live streaming, local inference, bandwidth mgmt</p></article>
+          <article class="card"><h4>intelligence-layer</h4><p>AI orchestration, multi-agent coordination, memory sharing</p></article>
+          <article class="card"><h4>economic-layer</h4><p>Tokenomics, staking, rewards, slashing, treasury</p></article>
+          <article class="card"><h4>expansion-layer</h4><p>Plugin SDK, marketplace, capability discovery, sandboxing</p></article>
+          <article class="card"><h4>portfolio</h4><p>Asset tracking, valuation, risk metrics, reporting</p></article>
+          <article class="card"><h4>workers</h4><p>Background jobs, cron, event processing, dead letter queues</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="adr" class="section reveal">
+      <div class="wrap">
+        <h2>Architecture Decision Records (0001-0005)</h2>
+        <div class="grid cards" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+          <article class="card"><h4>ADR-001: Multi-Service over Monolith</h4><p>Independent deployability, team autonomy, failure isolation. Trade-off: operational complexity.</p></article>
+          <article class="card"><h4>ADR-002: Kubernetes over Nomad</h4><p>Ecosystem maturity, autoscaling, GitOps (ArgoCD), service mesh (Istio) readiness.</p></article>
+          <article class="card"><h4>ADR-003: Authority Chain for Governance</h4><p>On-chain consensus for critical params (inflation, slashing). Off-chain for speed.</p></article>
+          <article class="card"><h4>ADR-004: Economic Layer First</h4><p>Tokenomics designed before compute layer. Incentives drive behavior, not vice versa.</p></article>
+          <article class="card"><h4>ADR-005: Edge-First Compute</h4><p>Camera data processed locally. Only inferences + metadata to cloud. Privacy + bandwidth.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="infra" class="section alt reveal">
+      <div class="wrap">
+        <h2>Infrastructure</h2>
+        <div class="grid cards" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+          <article class="card"><h4>Kubernetes (k8s/)</h4><p>ArgoCD GitOps, Istio service mesh, cert-manager, external-dns, sealed-secrets</p></article>
+          <article class="card"><h4>Docker Compose</h4><p>Local dev stack: all services, PostgreSQL, Redis, Kafka, Prometheus, Grafana, Jaeger</p></article>
+          <article class="card"><h4>Observability</h4><p>Prometheus metrics, Grafana dashboards, Loki logs, Tempo traces, alerting rules</p></article>
+          <article class="card"><h4>Security</h4><p>mTLS via Istio, OPA policies, Kyverno admission, Trivy scanning, cosign signing</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="wrap">
+        <div class="cta-banner">
+          <h3>Building the decentralized AI future.</h3>
+          <p style="max-width: 600px; margin: 0 auto var(--space-5);">12+ services. 5 ADRs. Kubernetes-native. Economic alignment at the core.</p>
+          <div class="btn-row" style="justify-content: center;">
+            <a class="btn btn-primary btn-lg" href="https://github.com/honeyamn10-source/galaxy_mvp" target="_blank" rel="noopener">GitHub →</a>
+            <a class="btn btn-ghost btn-lg" href="#adr">Read ADRs</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p>galaxy_mvp · <a href="https://github.com/honeyamn10-source/galaxy_mvp">GitHub</a> · <a href="https://github.com/honeyamn10-source/galaxy_mvp/blob/main/LICENSE">MIT License</a></p>
+    </div>
+  </footer>
+  <script src="assets/site.js"></script>
+</body>
+</html>

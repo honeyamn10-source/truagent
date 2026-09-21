@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>auto-shift — browser workspace with human approval</title>
+  <meta name="description" content="auto-shift is a browser automation workspace with human-in-the-loop approval. Built on Browser Use 0.13.10, Chromium, OpenAI/Ollama adapters. One-use approval IDs, 5-minute expiry.">
+  <meta name="keywords" content="browser automation, browser-use, human-in-the-loop, approval workflow, AI agent, python, chromium, playwright">
+  <meta name="author" content="Bittu Sharma">
+  <link rel="canonical" href="https://honeyamn10-source.github.io/auto-shift/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="auto-shift">
+  <meta property="og:title" content="auto-shift — browser workspace with human approval">
+  <meta property="og:description" content="Browser automation with approval gates. One-use approval IDs, 5-min expiry, Chromium + Browser Use.">
+  <meta property="og:url" content="https://honeyamn10-source.github.io/auto-shift/">
+  <meta property="og:image" content="https://honeyamn10-source.github.io/auto-shift/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="auto-shift — browser workspace with human approval">
+  <meta name="twitter:description" content="Browser automation with approval gates. One-use approval IDs, 5-min expiry.">
+  <meta name="twitter:image" content="https://honeyamn10-source.github.io/auto-shift/og.png">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#3b82f6">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="assets/site.css">
+  <link rel="sitemap" type="application/xml" href="sitemap.xml">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "auto-shift",
+    "url": "https://honeyamn10-source.github.io/auto-shift/",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Linux, macOS, Windows (Python 3.12+)",
+    "description": "Browser automation workspace with human-in-the-loop approval using Browser Use.",
+    "author": { "@type": "Person", "name": "Bittu Sharma" },
+    "license": "https://github.com/honeyamn10-source/auto-shift/blob/main/LICENSE",
+    "codeRepository": "https://github.com/honeyamn10-source/auto-shift"
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top" aria-label="auto-shift home">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#3b82f6"/><text x="32" y="45" font-family="ui-monospace,Consolas,monospace" font-size="34" font-weight="700" fill="#0b0e14" text-anchor="middle">s</text></svg>
+        auto-shift
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#approval">Approval Flow</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#models">Models</a>
+        <a href="#tests">Tests</a>
+        <a href="https://github.com/honeyamn10-source/auto-shift" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="Switch theme">☀️</button>
+      <button class="nav-burger" type="button" aria-expanded="false" aria-label="Toggle navigation">☰</button>
+    </div>
+    <div class="drawer-backdrop"></div>
+    <nav class="mobile-drawer" aria-label="Mobile navigation">
+      <a href="#approval">Approval Flow</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#models">Models</a>
+      <a href="#tests">Tests</a>
+      <a href="https://github.com/honeyamn10-source/auto-shift" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="wrap">
+        <div class="hero-grid">
+          <div class="hero-inner">
+            <span class="status"><span class="dot" aria-hidden="true"></span> v0.1.0 · MIT · Python 3.12+ · Browser Use 0.13.10</span>
+            <h1>Browser automation you approve.</h1>
+            <p class="lede">auto-shift wraps Browser Use with a human-in-the-loop approval layer. Every browser action pauses for your explicit consent via one-use IDs with 5-minute expiry. Built for safety-first automation.</p>
+            <div class="badge-row">
+              <span class="badge badge-b">Browser Use 0.13.10</span>
+              <span class="badge badge-b">Chromium</span>
+              <span class="badge badge-b">OpenAI + Ollama</span>
+              <span class="badge badge-b">5-min expiry IDs</span>
+            </div>
+            <div class="btn-row">
+              <a class="btn btn-primary btn-lg" href="#approval">How Approval Works</a>
+              <a class="btn btn-ghost btn-lg" href="https://github.com/honeyamn10-source/auto-shift" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+          <div class="term" role="img" aria-label="Approval flow demo">
+            <div class="term-bar"><i class="t1"></i><i class="t2"></i><i class="t3"></i><span>auto-shift</span></div>
+            <div class="term-body" data-type="true" data-type-speed="12">
+$ <span class="c1">auto-shift run</span> "find python async tutorial on youtube"
+<span class="dim">[Planner] Task: find python async tutorial on youtube</span>
+<span class="dim">[Planner] Step 1: Navigate to youtube.com</span>
+<span class="dim">[Planner] Step 2: Search "python async tutorial"</span>
+<span class="dim">[Planner] Step 3: Click first result</span>
+
+<span class="c3">▶ ACTION REQUIRES APPROVAL</span>
+<span class="dim">Action: navigate("https://www.youtube.com")</span>
+<span class="dim">Reason: Initial navigation to search platform</span>
+<span class="dim">Risk: Low (read-only navigation)</span>
+<span class="c3">Approval ID: k7m9x2</span> <span class="c2">(expires 5:00)</span>
+<span class="c1">?</span> Approve [k7m9x2]? <span class="c2">y/N</span> <span class="c2">y</span>
+
+<span class="c4">✓ Approved</span>
+<span class="dim">[Browser] Navigating to https://www.youtube.com...</span>
+<span class="dim">[Browser] Page loaded, extracting DOM...</span>
+
+<span class="c3">▶ ACTION REQUIRES APPROVAL</span>
+<span class="dim">Action: type("#search-input", "python async tutorial")</span>
+<span class="dim">Reason: Enter search query</span>
+<span class="dim">Risk: Low (input only)</span>
+<span class="c3">Approval ID: p4n8q1</span> <span class="c2">(expires 5:00)</span>
+<span class="c1">?</span> Approve [p4n8q1]? <span class="c2">y/N</span> <span class="c2">y</span>
+
+<span class="c4">✓ Approved</span>
+<span class="dim">[Browser] Typing "python async tutorial"...</span>
+<span class="dim">[Browser] Pressing Enter...</span>
+<span class="dim">[Browser] Results loaded</span>
+
+<span class="c1">✓ Task complete. Found 12 tutorials.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: var(--space-4);">
+      <div class="wrap">
+        <div class="stats-row">
+          <div class="stat"><div class="stat-value">1</div><div class="stat-label">Use per Approval ID</div></div>
+          <div class="stat"><div class="stat-value">5</div><div class="stat-label">Minute Expiry</div></div>
+          <div class="stat"><div class="stat-value">3</div><div class="stat-label">Test Suites</div></div>
+          <div class="stat"><div class="stat-value">127.0.0.1</div><div class="stat-label">Binding Only</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="approval" class="section reveal">
+      <div class="wrap">
+        <h2>Approval Flow</h2>
+        <p class="lede">Every action. Every time. You decide what runs.</p>
+        <div class="grid cards">
+          <article class="card"><h3>One-Use IDs</h3><p>Each approval request gets a cryptographically random ID (e.g., <code>k7m9x2</code>). Once used or expired, it's invalid forever. No replay attacks.</p></article>
+          <article class="card"><h3>5-Minute Expiry</h3><p>Approval requests auto-expire after 5 minutes. Stale requests can't be approved later. Forces timely decisions.</p></article>
+          <article class="card"><h3>Risk Classification</h3><p>Actions tagged: <span class="c4">Low</span> (navigate, scroll, read), <span class="c3">Medium</span> (type, click), <span class="c2">High</span> (form submit, download, auth). You see the risk before deciding.</p></article>
+          <article class="card"><h3>Reasoning Display</h3><p>Each request shows: what the agent wants to do, why it thinks it's necessary, and what the risk is. Full transparency.</p></article>
+          <article class="card"><h3>Batch Approve</h3><p>Approve multiple low-risk actions at once: <code>approve k7m9x2 p4n8q1 r3t5w7</code>. Saves clicks for repetitive tasks.</p></article>
+          <article class="card"><h3>Deny with Reason</h3><p>Deny requests with a note that feeds back to the planner: <code>deny k7m9x2 "already on that page"</code>. Agent learns.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="architecture" class="section alt reveal">
+      <div class="wrap">
+        <h2>Architecture</h2>
+        <p class="lede">FastAPI approval server + Browser Use driver + Pluggable LLM providers.</p>
+        <div class="term" role="img" aria-label="Component diagram">
+          <div class="term-bar"><i class="t1"></i><i class="t2"></i><i class="t3"></i><span>architecture</span></div>
+          <div class="term-body">
+<span class="c3">┌─────────────────────────────────────────────────────────┐</span>
+<span class="c3">│                    User / CLI                              │</span>
+<span class="c3">└─────────────────────────┬───────────────────────────────┘</span>
+<span class="c1">                          │ HTTP/WebSocket</span>
+<span class="c1">                          ▼</span>
+<span class="c3">┌─────────────────────────────────────────────────────────┐</span>
+<span class="c3">│              Approval Server (FastAPI)                   │</span>
+<span class="c3">│  127.0.0.1:8765                                          │</span>
+<span class="c3">│  • Pending action queue                                  │</span>
+<span class="c3">│  • Approval ID generation & validation                   │</span>
+<span class="c3">│  • Expiry management (5 min TTL)                         │</span>
+<span class="c3">│  • WebSocket for real-time updates                       │</span>
+<span class="c3">└─────────────────────────┬───────────────────────────────┘</span>
+<span class="c1">                          │</span>
+<span class="c1">              ┌───────────┴───────────┐</span>
+<span class="c1">              ▼                       ▼</span>
+<span class="c3">┌─────────────────────┐ ┌─────────────────────┐</span>
+<span class="c3">│  LLM Provider       │ │  Browser Driver     │</span>
+<span class="c3">│  (Pluggable)        │ │  (Browser Use)      │</span>
+<span class="c3">│  • OpenAI           │ │  • Chromium         │</span>
+<span class="c3">│  • Ollama (local)   │ │  • Playwright       │</span>
+<span class="c3">│  • Mock (testing)   │ │  • Mock (testing)   │</span>
+<span class="c3">└─────────────────────┘ └─────────────────────┘</span>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="models" class="section reveal">
+      <div class="wrap">
+        <h2>LLM Providers</h2>
+        <p class="lede">Two adapters. One interface. Swap without code changes.</p>
+        <div class="grid cards">
+          <article class="card"><h3>OpenAI Adapter</h3><p>GPT-4o, GPT-4o-mini, GPT-4-turbo. Function calling, vision, streaming. Set <code>OPENAI_API_KEY</code>.</p></article>
+          <article class="card"><h3>Ollama Adapter</h3><p>Llama 3.1, Mistral, CodeLlama, Qwen2.5. Fully local. No API keys. Set <code>OLLAMA_HOST</code> (default <code>http://localhost:11434</code>).</p></article>
+          <article class="card"><h3>Model Selection</h3><p>Auto-selects based on task complexity. Simple navigation → small model. Complex reasoning → large model. Configurable thresholds.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="tests" class="section alt reveal">
+      <div class="wrap">
+        <h2>Test Suite</h2>
+        <p class="lede">Three test modules. Mock browser driver. No external dependencies.</p>
+        <div class="grid cards" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+          <article class="card"><h4>smoke_browser.py</h4><p>End-to-end browser automation with mock driver. Navigation, clicks, typing, extraction.</p></article>
+          <article class="card"><h4>test_upstream_contract.py</h4><p>Validates compatibility with Browser Use 0.13.10 API. Catches breaking changes early.</p></article>
+          <article class="card"><h4>test_workspace.py</h4><p>Workspace isolation tests. Separate browser profiles, cookie stores, permissions per session.</p></article>
+        </div>
+        <div class="cta-banner" style="margin-top: var(--space-6);">
+          <h3>Run tests locally</h3>
+          <pre style="margin: var(--space-3) 0; text-align: left;"><code>$ pip install -r requirements.txt
+$ python -m playwright install chromium
+$ pytest tests/ -v</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="wrap">
+        <div class="cta-banner">
+          <h3>Automation with guardrails.</h3>
+          <p style="max-width: 600px; margin: 0 auto var(--space-5);">One-use IDs. 5-minute expiry. You stay in control.</p>
+          <div class="btn-row" style="justify-content: center;">
+            <a class="btn btn-primary btn-lg" href="https://github.com/honeyamn10-source/auto-shift" target="_blank" rel="noopener">GitHub →</a>
+            <a class="btn btn-ghost btn-lg" href="#approval">Deep Dive Approval</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p>auto-shift v0.1.0 · <a href="https://github.com/honeyamn10-source/auto-shift">GitHub</a> · <a href="https://github.com/honeyamn10-source/auto-shift/blob/main/LICENSE">MIT License</a></p>
+    </div>
+  </footer>
+  <script src="assets/site.js"></script>
+</body>
+</html>
