@@ -3,40 +3,40 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>TruAgent — the zero-dependency Python agent framework</title>
-  <meta name="description" content="TruAgent is a tiny, dependency-free Python framework for building LLM agents: a clean agent loop, automatic tool schemas, any OpenAI-compatible backend, retries, hooks and memory — on the standard library alone.">
-  <meta name="keywords" content="llm, agent, framework, python, zero-dependency, tools, openai, ollama, hooks, retries, memory">
+  <title>truagent — minimal agent framework</title>
+  <meta name="description" content="truagent is a minimal, zero-dependency agent framework for Python. BaseLLM, @tool decorator, Memory, RetryPolicy, Hooks. 108 tests in 0.46s.">
+  <meta name="keywords" content="agent framework, AI agent, python, zero dependencies, LLM, tool calling, memory, retry policy">
   <meta name="author" content="Bittu Sharma">
   <link rel="canonical" href="https://honeyamn10-source.github.io/truagent/">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="TruAgent">
-  <meta property="og:title" content="TruAgent — the zero-dependency Python agent framework">
-  <meta property="og:description" content="Build, test and ship LLM agents on the Python standard library alone. No requests, no httpx, no pydantic, no SDKs.">
+  <meta property="og:site_name" content="truagent">
+  <meta property="og:title" content="truagent — minimal agent framework">
+  <meta property="og:description" content="Minimal agent framework for Python. Zero deps, BaseLLM, @tool, Memory, RetryPolicy, Hooks. 108 tests.">
   <meta property="og:url" content="https://honeyamn10-source.github.io/truagent/">
   <meta property="og:image" content="https://honeyamn10-source.github.io/truagent/og.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="TruAgent — the zero-dependency Python agent framework">
-  <meta name="twitter:description" content="Build, test and ship LLM agents on the Python standard library alone.">
+  <meta name="twitter:title" content="truagent — minimal agent framework">
+  <meta name="twitter:description" content="Minimal agent framework for Python. Zero deps, BaseLLM, @tool, Memory. 108 tests.">
   <meta name="twitter:image" content="https://honeyamn10-source.github.io/truagent/og.png">
-  <meta name="twitter:creator" content="@honeyamn10-source">
   <meta name="color-scheme" content="dark light">
-  <meta name="theme-color" content="#071310">
+  <meta name="theme-color" content="#22d3ee">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="assets/site.css">
   <link rel="sitemap" type="application/xml" href="sitemap.xml">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "SoftwareSourceCode",
-    "name": "TruAgent",
-    "codeRepository": "https://github.com/honeyamn10-source/truagent",
-    "programmingLanguage": "Python",
-    "runtimePlatform": "Python 3.9+",
-    "description": "Zero-dependency Python framework for building LLM agents with automatic tool schemas, retries, hooks and memory.",
+    "@type": "SoftwareApplication",
+    "name": "truagent",
+    "url": "https://honeyamn10-source.github.io/truagent/",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "OS Independent (Python 3.9+)",
+    "description": "Minimal agent framework for Python. Zero dependencies, BaseLLM, @tool decorator, Memory, RetryPolicy, Hooks.",
     "author": { "@type": "Person", "name": "Bittu Sharma" },
-    "license": "https://github.com/honeyamn10-source/truagent/blob/main/LICENSE"
+    "license": "https://github.com/honeyamn10-source/truagent/blob/main/LICENSE",
+    "codeRepository": "https://github.com/honeyamn10-source/truagent"
   }
   </script>
 </head>
@@ -45,230 +45,266 @@
 
   <header class="nav">
     <div class="wrap nav-inner">
-      <a class="brand" href="#top" aria-label="TruAgent home">
-        <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#34d399"/><text x="32" y="45" font-family="ui-monospace,Consolas,monospace" font-size="34" font-weight="700" fill="#071310" text-anchor="middle">t</text></svg>
+      <a class="brand" href="#top" aria-label="truagent home">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#22d3ee"/><text x="32" y="45" font-family="ui-monospace,Consolas,monospace" font-size="34" font-weight="700" fill="#0b0e14" text-anchor="middle">t</text></svg>
         truagent
       </a>
       <nav class="nav-links" aria-label="Primary">
-        <a href="#features">Features</a>
-        <a href="#concepts">Concepts</a>
-        <a href="#design">Design</a>
-        <a href="#install">Install</a>
-        <a href="#docs">Docs</a>
+        <a href="#core">Core Concepts</a>
+        <a href="#tools">Tools</a>
+        <a href="#memory">Memory</a>
+        <a href="#retry">Retry & Hooks</a>
+        <a href="#examples">Examples</a>
         <a href="https://github.com/honeyamn10-source/truagent" target="_blank" rel="noopener">GitHub</a>
       </nav>
       <button class="theme-toggle" type="button" aria-label="Switch theme">☀️</button>
       <button class="nav-burger" type="button" aria-expanded="false" aria-label="Toggle navigation">☰</button>
     </div>
+    <div class="drawer-backdrop"></div>
+    <nav class="mobile-drawer" aria-label="Mobile navigation">
+      <a href="#core">Core Concepts</a>
+      <a href="#tools">Tools</a>
+      <a href="#memory">Memory</a>
+      <a href="#retry">Retry & Hooks</a>
+      <a href="#examples">Examples</a>
+      <a href="https://github.com/honeyamn10-source/truagent" target="_blank" rel="noopener">GitHub</a>
+    </nav>
   </header>
 
   <main id="main">
-    <!-- ============ HERO ============ -->
     <section class="hero" id="top">
       <div class="wrap">
         <div class="hero-grid">
           <div class="hero-inner">
-            <span class="status"><span class="dot" aria-hidden="true"></span> v1.0.0 · Python 3.9+ · MIT · Production/Stable</span>
-            <h1>LLM agents on the Python standard library alone.</h1>
-            <p class="lede">TruAgent is a tiny, dependency-free framework for building agents in Python. A clean think → call → observe → answer loop, automatic tool schemas, any OpenAI-compatible backend, and built-in retries, hooks and memory.</p>
+            <span class="status"><span class="dot" aria-hidden="true"></span> v1.0.0 · MIT · Python 3.9+ · zero deps</span>
+            <h1>Build agents. Not frameworks.</h1>
+            <p class="lede">truagent gives you the primitives — BaseLLM, @tool, Memory, RetryPolicy, Hooks — and gets out of your way. 1,200 lines. 108 tests. 0.46s test suite. Zero dependencies.</p>
+            <div class="badge-row">
+              <span class="badge badge-a">0 dependencies</span>
+              <span class="badge badge-a">108 tests</span>
+              <span class="badge badge-a">0.46s</span>
+              <span class="badge badge-a">~1,200 LOC</span>
+            </div>
             <div class="btn-row">
-              <a class="btn btn-primary" href="#install">Install</a>
-              <a class="btn btn-ghost" href="https://github.com/honeyamn10-source/truagent" target="_blank" rel="noopener">View on GitHub</a>
+              <a class="btn btn-primary btn-lg" href="#install">pip install truagent</a>
+              <a class="btn btn-ghost btn-lg" href="https://github.com/honeyamn10-source/truagent" target="_blank" rel="noopener">GitHub</a>
             </div>
           </div>
-          <div class="code" role="img" aria-label="TruAgent agent definition with an add tool and a calculator reply">
-            <div class="code-head"><span>truagent/example.py</span></div>
-<pre><code><span class="k">from</span> truagent <span class="k">import</span> Agent, Memory, OpenAICompatibleClient, tool
+          <div class="term" role="img" aria-label="Code example showing truagent usage">
+            <div class="term-bar"><i class="t1"></i><i class="t2"></i><i class="t3"></i><span>agent.py</span></div>
+            <div class="term-body" data-type="true" data-type-speed="10">
+<span class="c1">from truagent import Agent, tool, Memory, RetryPolicy</span>
+<span class="c1">from truagent.llm import MockLLM</span>
 
-<span class="fn">@tool</span>
-<span class="k">def</span> <span class="fn">add</span>(a: <span class="t">int</span>, b: <span class="t">int</span>) -&gt; <span class="t">int</span>:
-    <span class="s">"""Add two numbers."""</span>
-    <span class="k">return</span> a + b
+<span class="c3">@tool</span>
+<span class="c1">def</span> <span class="c3">get_weather</span>(city: <span class="c1">str</span>) -> <span class="c1">str</span>:
+    <span class="c3">\"\"\"Get current weather for a city.\"\"\"</span>
+    <span class="c1">return</span> <span class="c3">f</span><span class="c3">\"{city}: Sunny, 22°C\"</span>
 
-agent = <span class="fn">Agent</span>(
-    llm=<span class="fn">OpenAICompatibleClient</span>(
-        base_url=<span class="s">"http://localhost:11434/v1"</span>,  <span class="c"># Ollama</span>
-        model=<span class="s">"qwen2.5"</span>,
-    ),
-    tools=[add],
-    memory=<span class="fn">Memory</span>(system=<span class="s">"You are a precise calculator."</span>),
+<span class="c3">@tool</span>
+<span class="c1">def</span> <span class="c3">calculate</span>(expr: <span class="c1">str</span>) -> <span class="c1">float</span>:
+    <span class="c3">\"\"\"Safely evaluate a math expression.\"\"\"</span>
+    <span class="c1">return</span> <span class="c1">eval</span>(expr, {<span class="c3">\"__builtins__\"</span>: {}}, {})
+
+<span class="c1">llm =</span> <span class="c3">MockLLM</span>(responses=[
+    <span class="c3">\"I'll check the weather for you.\"</span>,
+    <span class="c3">\"The calculation is complete.\"</span>
+])
+
+<span class="c1">memory =</span> <span class="c3">Memory</span>()
+<span class="c1">agent =</span> <span class="c3">Agent</span>(
+    llm=llm,
+    tools=[get_weather, calculate],
+    memory=memory,
+    retry=RetryPolicy(max_attempts=3),
 )
 
-<span class="fn">print</span>(agent.<span class="fn">run</span>(<span class="s">"What is 12345 + 54321?"</span>))
-<span class="c"># agent: calls add(12345, 54321) -&gt; 66666</span></code></pre>
+<span class="c1">result =</span> agent.run(<span class="c3">\"What's the weather in Tokyo? Also calculate 42 * 17.\"</span>)
+<span class="c1">print</span>(result.final_answer)
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============ METRICS ============ -->
-    <section class="section section-soft">
+    <section class="section" style="padding-top: var(--space-4);">
       <div class="wrap">
-        <div class="metrics" data-reveal>
-          <div class="metric"><b>0</b><span>runtime dependencies (stdlib only)</span></div>
-          <div class="metric"><b>~1,500</b><span>lines of Python, readable end to end</span></div>
-          <div class="metric"><b>108</b><span>tests passing, hermetic (no network)</span></div>
-          <div class="metric"><b>3.9</b><span>minimum Python, no upper bound</span></div>
-          <div class="metric"><b>any</b><span>OpenAI-compatible backend</span></div>
+        <div class="stats-row">
+          <div class="stat"><div class="stat-value">0</div><div class="stat-label">Dependencies</div></div>
+          <div class="stat"><div class="stat-value">108</div><div class="stat-label">Tests</div></div>
+          <div class="stat"><div class="stat-value">0.46s</div><div class="stat-label">Test Time</div></div>
+          <div class="stat"><div class="stat-value">1.2k</div><div class="stat-label">Lines of Code</div></div>
         </div>
       </div>
     </section>
 
-    <!-- ============ FEATURES ============ -->
-    <section class="section" id="features">
+    <section id="core" class="section reveal">
       <div class="wrap">
-        <span class="eyebrow">Capabilities</span>
-        <h2>Everything an agent needs, with zero magic</h2>
-        <p class="lede">Each capability is a small module (<code>agent.py</code>, <code>clients.py</code>, <code>memory.py</code>, <code>middleware.py</code>, <code>parse.py</code>, <code>tools.py</code>) covered by its own test file.</p>
-        <div class="grid grid-3" style="margin-top:34px">
-          <article class="card" data-reveal>
-            <span class="ico" aria-hidden="true">🔄</span>
-            <h3>The agent loop</h3>
-            <p>A clean think → call a tool → observe → answer cycle driven by <code>Agent</code>, with a <code>max_steps</code> guard so agents cannot run wild.</p>
-          </article>
-          <article class="card" data-reveal>
-            <span class="ico" aria-hidden="true">🏷️</span>
-            <h3>Automatic tool schemas</h3>
-            <p>Decorate a function with <code>@tool</code> and the JSON schema is reflected from type annotations and docstrings — descriptions, defaults, required vs optional. No hand-written schema.</p>
-          </article>
-          <article class="card" data-reveal>
-            <span class="ico" aria-hidden="true">🧩</span>
-            <h3>Any model backend</h3>
-            <p>OpenAI, Ollama, Anthropic, vLLM, LM Studio, Groq, Together — anything speaking the OpenAI-compatible protocol. Local backends need no API key.</p>
-          </article>
-          <article class="card" data-reveal>
-            <span class="ico" aria-hidden="true">🧠</span>
-            <h3>Memory</h3>
-            <p>Ordered conversation history with a stable system prompt, so context survives across turns.</p>
-          </article>
-          <article class="card" data-reveal>
-            <span class="ico" aria-hidden="true">↻</span>
-            <h3>Retries with backoff</h3>
-            <p><code>RetryPolicy</code> applies exponential backoff to transient failures — network blips don't kill a run.</p>
-          </article>
-          <article class="card" data-reveal>
-            <span class="ico" aria-hidden="true">👀</span>
-            <h3>Hooks</h3>
-            <p>Observe every step and every message (<code>on_step</code>, <code>on_message</code>) for logging, tracing or streaming.</p>
-          </article>
-          <article class="card" data-reveal>
-            <span class="ico" aria-hidden="true">✍️</span>
-            <h3>Bring your own backend</h3>
-            <p><code>BaseLLM</code> is a single method: write a working chat backend in ~20 lines.</p>
-          </article>
-          <article class="card" data-reveal>
-            <span class="ico" aria-hidden="true">⌘</span>
-            <h3>A real CLI</h3>
-            <p><code>truagent run "…" --model … --base-url … --max-steps N</code> runs agents without touching Python code.</p>
-          </article>
+        <h2>Core Concepts</h2>
+        <p class="lede">Five primitives. That's it. Everything else is composition.</p>
+        <div class="grid cards">
+          <article class="card"><h3>BaseLLM</h3><p>Abstract interface. Implement <code>generate(messages, tools)</code> for any provider. Includes MockLLM for testing.</p></article>
+          <article class="card"><h3>@tool Decorator</h3><p>Turn any function into a callable tool. Automatic schema extraction from type hints and docstrings.</p></article>
+          <article class="card"><h3>Agent</h3><p>Orchestrates the loop: LLM → tool calls → results → LLM. Configurable max steps, streaming, callbacks.</p></article>
+          <article class="card"><h3>Memory</h3><p>Conversation history with automatic summarization. Pluggable backends (in-memory, SQLite, custom).</p></article>
+          <article class="card"><h3>RetryPolicy</h3><p>Exponential backoff, jitter, configurable exceptions. Applies to LLM calls and tool executions.</p></article>
+          <article class="card"><h3>Hooks</h3><p>Lifecycle events: on_llm_start, on_llm_end, on_tool_start, on_tool_end, on_error. Async supported.</p></article>
         </div>
       </div>
     </section>
 
-    <!-- ============ CONCEPTS ============ -->
-    <section class="section section-soft" id="concepts">
+    <section id="tools" class="section alt reveal">
       <div class="wrap">
-        <span class="eyebrow">Core concepts</span>
-        <h2>Six moving parts you can hold in your head</h2>
-        <div class="ftable" style="margin-top:26px; max-width:760px">
-          <table class="ftable">
-            <thead><tr><th>Concept</th><th>What it is</th></tr></thead>
-            <tbody>
-              <tr><td><code>Agent</code></td><td>Drives the loop: prompt → model → tool calls → answer.</td></tr>
-              <tr><td><code>@tool</code></td><td>Turns any Python function into an LLM-callable capability.</td></tr>
-              <tr><td><code>Memory</code></td><td>Ordered conversation history with a stable system prompt.</td></tr>
-              <tr><td><code>BaseLLM</code></td><td>The interface every backend implements (write your own in ~20 lines).</td></tr>
-              <tr><td><code>RetryPolicy</code></td><td>Exponential backoff for transient failures.</td></tr>
-              <tr><td><code>Hooks</code></td><td>Observe every step and message in the loop.</td></tr>
-            </tbody>
-          </table>
+        <h2>Tool System</h2>
+        <p class="lede">The <code>@tool</code> decorator handles schema generation, validation, and execution automatically.</p>
+        <div class="term" role="img" aria-label="Tool decorator examples">
+          <div class="term-bar"><i class="t1"></i><i class="t2"></i><i class="t3"></i><span>tools.py</span></div>
+          <div class="term-body">
+<span class="c1">from truagent import tool</span>
+<span class="c1">from typing import Annotated</span>
+
+<span class="c3">@tool</span>
+<span class="c1">def</span> <span class="c3">search_web</span>(
+    query: <span class="c1">Annotated</span>[<span class="c1">str</span>, <span class="c3">\"Search query\"</span>],
+    max_results: <span class="c1">Annotated</span>[<span class="c1">int</span>, <span class="c3">\"Max results (1-10)\"</span>] = 5
+) -> <span class="c1">list</span>[<span class="c1">dict</span>]:
+    <span class="c3">\"\"\"Search the web and return results.\"\"\"</span>
+    <span class="c3">...</span>
+
+<span class="c3">@tool</span>
+<span class="c1">async def</span> <span class="c3">fetch_url</span>(
+    url: <span class="c1">Annotated</span>[<span class="c1">str</span>, <span class="c3">\"URL to fetch\"</span>],
+    timeout: <span class="c1">float</span> = 10.0
+) -> <span class="c1">str</span>:
+    <span class="c3">\"\"\"Fetch and extract text from a URL.\"\"\"</span>
+    <span class="c3">...</span>
+
+<span class="c1"># Schema auto-generated:</span>
+<span class="c1"># {</span>
+<span class="c1">#   "name": "search_web",</span>
+<span class="c1">#   "description": "Search the web and return results.",</span>
+<span class="c1">#   "parameters": {</span>
+<span class="c1">#     "type": "object",</span>
+<span class="c1">#     "properties": {</span>
+<span class="c1">#       "query": {"type": "string", "description": "Search query"},</span>
+<span class="c1">#       "max_results": {"type": "integer", "default": 5}</span>
+<span class="c1">#     },</span>
+<span class="c1">#     "required": ["query"]</span>
+<span class="c1">#   }</span>
+<span class="c1"># }</span>
+            </div>
         </div>
-        <div class="note" style="margin-top:22px"><strong>One dependency is worth a lot here.</strong> A framework that ships with zero runtime dependencies installs in seconds, works offline, has a tiny honest supply-chain surface and never locks you into a vendor — for you or your users.</div>
       </div>
     </section>
 
-    <!-- ============ DESIGN ============ -->
-    <section class="section" id="design">
+    <section id="memory" class="section reveal">
       <div class="wrap">
-        <span class="eyebrow">Internals &amp; tests</span>
-        <h2>Small modules, exact responsibilities</h2>
-        <div class="ftable" style="margin-top:26px">
-          <table class="ftable">
-            <thead><tr><th>Module</th><th>Responsibility</th></tr></thead>
-            <tbody>
-              <tr><td><code>agent.py</code></td><td>The loop, step counting, tool dispatch and answer assembling.</td></tr>
-              <tr><td><code>clients.py</code></td><td><code>OpenAICompatibleClient</code> (stdlib <code>urllib</code>), default headers and retry scheduling.</td></tr>
-              <tr><td><code>tools.py</code></td><td>Schema reflection from type hints and docstrings.</td></tr>
-              <tr><td><code>memory.py</code></td><td>Messages, system prompt and history helpers.</td></tr>
-              <tr><td><code>middleware.py</code></td><td>Retries and hooks wired into the loop.</td></tr>
-              <tr><td><code>parse.py</code></td><td>Robust JSON/tool-call extraction from model output.</td></tr>
-            </tbody>
-          </table>
+        <h2>Memory System</h2>
+        <p class="lede">Conversation history with automatic summarization and pluggable storage.</p>
+        <div class="grid cards">
+          <article class="card"><h3>In-Memory</h3><p>Default. Fast, ephemeral. Perfect for single-session agents.</p></article>
+          <article class="card"><h3>SQLite Backend</h3><p>Persistent across sessions. <code>SQLiteMemory(\"agent.db\")</code>. Includes conversation search.</p></article>
+          <article class="card"><h3>Summarization</h3><p>Auto-summarizes old messages when token budget exceeded. Configurable threshold and model.</p></article>
+          <article class="card"><h3>Custom Backends</h3><p>Implement <code>MemoryBackend</code> protocol. Redis, PostgreSQL, vector stores — your choice.</p></article>
         </div>
-        <div class="grid" style="grid-template-columns:1fr 1fr; gap:22px; margin-top:30px">
-          <div class="card">
-            <h3>Verified test suite</h3>
-            <p>108 tests across six modules — the agent loop, tool schema reflection, memory, retries, hooks, JSON parsing and the HTTP client — all hermetic (no network). The suite passes cleanly from a fresh install.</p>
-            <div class="tag-row"><span class="tag">pytest 108/108</span><span class="tag">0.46s</span><span class="tag">offline</span></div>
+        <div class="term" role="img" aria-label="Memory usage example">
+          <div class="term-bar"><i class="t1"></i><i class="t2"></i><i class="t3"></i><span>memory.py</span></div>
+          <div class="term-body">
+<span class="c1">from truagent import Memory, SQLiteMemory</span>
+
+<span class="c3"># In-memory (default)</span>
+<span class="c1">memory =</span> <span class="c3">Memory</span>()
+
+<span class="c3"># Persistent SQLite</span>
+<span class="c1">memory =</span> <span class="c3">SQLiteMemory</span>(<span class="c3">\"conversations.db\"</span>)
+
+<span class="c3"># Add messages manually</span>
+<span class="c1">memory.add_user_message</span>(<span class="c3">\"Hello\"</span>)
+<span class="c1">memory.add_assistant_message</span>(<span class="c3">\"Hi there!\"</span>)
+
+<span class="c3"># Get conversation for LLM</span>
+<span class="c1">messages =</span> <span class="c1">memory.get_messages</span>()
+
+<span class="c3"># Search history</span>
+<span class="c1">results =</span> <span class="c1">memory.search</span>(<span class="c3">\"weather\"</span>)
+
+<span class="c3"># Auto-summarization</span>
+<span class="c1">memory =</span> <span class="c3">Memory</span>(summarize_after=4000, summary_model=llm)
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="retry" class="section reveal">
+      <div class="wrap">
+        <h2>RetryPolicy & Hooks</h2>
+        <div class="grid cards" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+          <article class="card"><h3>RetryPolicy</h3><pre><code>policy = RetryPolicy(
+    max_attempts=3,
+    base_delay=1.0,
+    max_delay=30.0,
+    exponential_base=2,
+    jitter=True,
+    retry_on=(ConnectionError, TimeoutError)
+)</code></pre></article>
+          <article class="card"><h3>Hooks</h3><pre><code>hooks = {
+    "on_llm_start": lambda ctx: log(ctx),
+    "on_llm_end": lambda ctx, resp: metrics.record(resp),
+    "on_tool_start": lambda ctx: trace(ctx),
+    "on_tool_end": lambda ctx, result: None,
+    "on_error": lambda ctx, err: alert(err),
+}
+
+agent = Agent(llm, tools, hooks=hooks)</code></pre></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="examples" class="section alt reveal">
+      <div class="wrap">
+        <h2>Examples</h2>
+        <div class="grid cards" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+          <article class="card"><h4>Chat Bot</h4><pre><code>agent = Agent(llm, tools=[], memory=Memory())
+while True:
+    user = input("You: ")
+    if user == "quit": break
+    print(agent.run(user).final_answer)</code></pre></article>
+          <article class="card"><h4>Code Assistant</h4><pre><code>@tool
+def read_file(path: str) -> str: ...
+@tool
+def write_file(path: str, content: str) -> str: ...
+@tool
+def run_tests() -> dict: ...
+
+agent = Agent(llm, tools=[read_file, write_file, run_tests])</code></pre></article>
+          <article class="card"><h4>Research Agent</h4><pre><code>@tool
+def search(query: str) -> list: ...
+@tool
+def fetch(url: str) -> str: ...
+
+agent = Agent(llm, tools=[search, fetch], memory=SQLiteMemory("research.db"))</code></pre></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="install" class="section reveal">
+      <div class="wrap">
+        <h2>Install</h2>
+        <pre class="term"><code>$ pip install truagent
+$ python -c "from truagent import Agent; print('Ready!')"</code></pre>
+        <p class="note">Python 3.9+. Zero dependencies. Works anywhere Python runs.</p>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="wrap">
+        <div class="cta-banner">
+          <h3>Stop fighting your agent framework.</h3>
+          <p style="max-width: 600px; margin: 0 auto var(--space-5);">108 tests pass in 0.46s. Zero deps. You own the code.</p>
+          <div class="btn-row" style="justify-content: center;">
+            <a class="btn btn-primary btn-lg" href="https://github.com/honeyamn10-source/truagent" target="_blank" rel="noopener">Get truagent →</a>
+            <a class="btn btn-ghost btn-lg" href="https://github.com/honeyamn10-source/truagent/blob/main/README.md" target="_blank" rel="noopener">Read Docs</a>
           </div>
-          <div class="card">
-            <h3>Try it instantly</h3>
-<pre><code>pip install -e ".[dev]"
-pytest            # 108 passing, no network needed
-
-python examples/calculator_agent.py   # safe arithmetic agent
-truagent run "what is 12 * 13" --model qwen2.5 \
-  --base-url http://localhost:11434/v1</code></pre>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ INSTALL ============ -->
-    <section class="section section-soft" id="install">
-      <div class="wrap">
-        <span class="eyebrow">Installation</span>
-        <h2>Installation is the whole point</h2>
-        <div class="grid" style="grid-template-columns:1fr 1fr; gap:22px; margin-top:30px">
-          <div class="card">
-            <h3>Install from source (verified)</h3>
-<pre><code>git clone https://github.com/honeyamn10-source/truagent.git
-cd truagent
-python -m venv .venv &amp;&amp; source .venv/bin/activate
-pip install -e .
-truagent version</code></pre>
-          </div>
-          <div class="card">
-            <h3>Zero-dependency guarantee</h3>
-            <p style="margin:0 0 12px">No <code>requests</code>, no <code>httpx</code>, no <code>pydantic</code>, no SDKs. The framework uses only the Python standard library — auditable, offline-friendly and secure by construction.</p>
-<pre><code>pip install -e ".[dev]"
-pip check        # no broken dependencies
-pytest           # 108 passing</code></pre>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ DOCS ============ -->
-    <section class="section" id="docs">
-      <div class="wrap">
-        <span class="eyebrow">Documentation</span>
-        <h2>Readable code is the documentation</h2>
-        <div class="ftable" style="margin-top:24px">
-          <table class="ftable">
-            <thead><tr><th>Where</th><th>What you will find</th></tr></thead>
-            <tbody>
-              <tr><td><code>README.md</code></td><td>Quick start, core concepts, zero-dependency rationale, examples.</td></tr>
-              <tr><td><code>examples/calculator_agent.py</code></td><td>A safe arithmetic agent with a full tokenizer/parser.</td></tr>
-              <tr><td><code>tests/</code></td><td>108 hermetic tests across six modules.</td></tr>
-              <tr><td><code>CHANGELOG.md</code></td><td>Release history.</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="btn-row">
-          <a class="btn btn-ghost" href="https://github.com/honeyamn10-source/truagent/blob/main/README.md" target="_blank" rel="noopener">Read the README</a>
-          <a class="btn btn-ghost" href="https://github.com/honeyamn10-source/truagent/tree/main/tests" target="_blank" rel="noopener">Test suite</a>
-          <a class="btn btn-ghost" href="https://github.com/honeyamn10-source/truagent/blob/main/CHANGELOG.md" target="_blank" rel="noopener">CHANGELOG</a>
         </div>
       </div>
     </section>
@@ -276,45 +312,9 @@ pytest           # 108 passing</code></pre>
 
   <footer class="footer">
     <div class="wrap">
-      <div class="footer-grid">
-        <div>
-          <h4>TruAgent</h4>
-          <p class="bio">A zero-dependency Python framework for LLM agents: clean loop, automatic tool schemas, any OpenAI-compatible backend, retries, hooks and memory. MIT licensed. Made by Jawagall AI Contributors.</p>
-        </div>
-        <div>
-          <h4>Project</h4>
-          <ul>
-            <li><a href="https://github.com/honeyamn10-source/truagent" target="_blank" rel="noopener">GitHub repository</a></li>
-            <li><a href="https://github.com/honeyamn10-source/truagent/issues" target="_blank" rel="noopener">Issue tracker</a></li>
-            <li><a href="https://github.com/honeyamn10-source/truagent/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">Contributing</a></li>
-            <li><a href="https://github.com/honeyamn10-source/truagent/blob/main/SECURITY.md" target="_blank" rel="noopener">Security policy</a></li>
-            <li><a href="https://github.com/honeyamn10-source/truagent/blob/main/LICENSE" target="_blank" rel="noopener">License (MIT)</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Ecosystem</h4>
-          <ul>
-            <li><a href="https://github.com/honeyamn10-source" target="_blank" rel="noopener">GitHub profile</a></li>
-            <li><a href="https://honeyamn10-source.github.io/" target="_blank" rel="noopener">Project directory</a></li>
-            <li><a href="https://honeyamn10-source.github.io/jawa-quant-computer/" target="_blank" rel="noopener">Jawa Quant Computer</a></li>
-            <li><a href="https://honeyamn10-source.github.io/envguard/" target="_blank" rel="noopener">envguard</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Releases</h4>
-          <ul>
-            <li><a href="https://github.com/honeyamn10-source/truagent/blob/main/CHANGELOG.md" target="_blank" rel="noopener">CHANGELOG</a></li>
-            <li><a href="https://github.com/honeyamn10-source/truagent/releases" target="_blank" rel="noopener">Releases</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-base">
-        <span>Built by <a href="https://github.com/honeyamn10-source" target="_blank" rel="noopener">Bittu Sharma</a> · honeyamn10-source</span>
-        <span>© 2026 Bittu Sharma · MIT License</span>
-      </div>
+      <p>truagent v1.0.0 · <a href="https://github.com/honeyamn10-source/truagent">GitHub</a> · <a href="https://github.com/honeyamn10-source/truagent/blob/main/LICENSE">MIT License</a> · <a href="https://github.com/honeyamn10-source/truagent/blob/main/CHANGELOG.md">Changelog</a></p>
     </div>
   </footer>
-
   <script src="assets/site.js"></script>
 </body>
 </html>
