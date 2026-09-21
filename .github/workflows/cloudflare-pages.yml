@@ -23,7 +23,7 @@ jobs:
       OUTPUT_DIR: docs/landing
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Verify deployment inputs
         shell: bash

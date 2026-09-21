@@ -26,7 +26,7 @@ jobs:
           - compliance-engine
     
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       
       - name: Build image for scanning
         run: |
@@ -54,7 +54,7 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       
       - name: Run Trivy filesystem scan
         uses: aquasecurity/trivy-action@master
@@ -78,7 +78,7 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       
       - name: Run dependency-check
         uses: dependency-check/Dependency-Check_Action@main
@@ -101,7 +101,7 @@ jobs:
         language: [ 'python', 'go' ]
     
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v2
