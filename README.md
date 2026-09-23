@@ -2,6 +2,20 @@
 
 # TruAgent
 
+<!-- repo-badges:start -->
+<div align="center">
+
+[![Stars](https://img.shields.io/github/stars/honeyamn10-source/truagent?style=flat-square&logo=github&label=Stars)](https://github.com/honeyamn10-source/truagent/stargazers)
+[![Forks](https://img.shields.io/github/forks/honeyamn10-source/truagent?style=flat-square&logo=github&label=Forks)](https://github.com/honeyamn10-source/truagent/forks)
+[![Issues](https://img.shields.io/github/issues/honeyamn10-source/truagent?style=flat-square&logo=github&label=Issues)](https://github.com/honeyamn10-source/truagent/issues)
+[![Last Commit](https://img.shields.io/github/last-commit/honeyamn10-source/truagent?style=flat-square&logo=github&label=Last%20Commit)](https://github.com/honeyamn10-source/truagent/commits/main)
+
+[Repository](https://github.com/honeyamn10-source/truagent) · [Issues](https://github.com/honeyamn10-source/truagent/issues) · [Pull Requests](https://github.com/honeyamn10-source/truagent/pulls) · [Actions](https://github.com/honeyamn10-source/truagent/actions)
+
+</div>
+<!-- repo-badges:end -->
+
+
 A Python agent library and command-line runner with no third-party runtime dependencies.
 
 [Project website](https://honeyamn10-source.github.io/truagent/) · [Source](https://github.com/honeyamn10-source/truagent) · [Build results](https://github.com/honeyamn10-source/truagent/actions) · [Issues](https://github.com/honeyamn10-source/truagent/issues)
