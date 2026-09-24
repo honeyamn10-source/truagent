@@ -9,6 +9,7 @@
 [![Forks](https://img.shields.io/github/forks/honeyamn10-source/truagent?style=flat-square&logo=github&label=Forks)](https://github.com/honeyamn10-source/truagent/forks)
 [![Issues](https://img.shields.io/github/issues/honeyamn10-source/truagent?style=flat-square&logo=github&label=Issues)](https://github.com/honeyamn10-source/truagent/issues)
 [![Last Commit](https://img.shields.io/github/last-commit/honeyamn10-source/truagent?style=flat-square&logo=github&label=Last%20Commit)](https://github.com/honeyamn10-source/truagent/commits/main)
+[![License](https://img.shields.io/github/license/honeyamn10-source/truagent?style=flat-square&label=License)](https://github.com/honeyamn10-source/truagent/blob/main/LICENSE)
 
 [Repository](https://github.com/honeyamn10-source/truagent) · [Issues](https://github.com/honeyamn10-source/truagent/issues) · [Pull Requests](https://github.com/honeyamn10-source/truagent/pulls) · [Actions](https://github.com/honeyamn10-source/truagent/actions)
 
