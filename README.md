@@ -15,6 +15,18 @@
 </div>
 <!-- repo-badges:end -->
 
+<!-- professional-meta:start -->
+<div align="center">
+
+[![ci](https://github.com/honeyamn10-source/truagent/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/honeyamn10-source/truagent/actions/workflows/ci.yml) [![release](https://github.com/honeyamn10-source/truagent/actions/workflows/release.yml/badge.svg?branch=main)](https://github.com/honeyamn10-source/truagent/actions/workflows/release.yml)
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white) ![CLI](https://img.shields.io/badge/CLI-4D4D4D?style=flat-square&logo=gnubash&logoColor=white) ![Pytest](https://img.shields.io/badge/Pytest-0A9EDC?style=flat-square&logo=pytest&logoColor=white) ![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
+
+[Documentation](docs) · [Examples](examples) · [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md) · [Changelog](CHANGELOG.md)
+
+</div>
+<!-- professional-meta:end -->
+
 
 A Python agent library and command-line runner with no third-party runtime dependencies.
 
