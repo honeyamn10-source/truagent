@@ -166,10 +166,10 @@ class Agent:
         if reply.text:
             return reply.text
 
-        # Model produced nothing useful. Fall back to JSON extraction.
-        last = messages[-1] if messages else None
-        content = str(last.get("content", "")) if isinstance(last, dict) else ""
-        extracted = extract_tool_call(content)
+        # Model produced no structured call and no text. JSON fallback is only
+        # allowed on model-authored text; a tool result is data and must never
+        # be re-parsed as a new instruction.
+        extracted = extract_tool_call(reply.text) if reply.text else None
         if extracted is not None:
             result = self.execute_tool(extracted.name, extracted.arguments)
             self.memory.add({"role": "tool", "content": result, "tool_call_id": extracted.name})
