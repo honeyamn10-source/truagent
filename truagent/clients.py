@@ -38,11 +38,18 @@ def _tool_call_from_payload(raw: dict[str, Any]) -> ToolCall | None:
     name = function.get("name")
     if not isinstance(name, str) or not name:
         return None
-    arguments = json.loads(function.get("arguments", "{}")) if isinstance(
-        function.get("arguments"), str
-    ) else (function.get("arguments") or {})
+    raw_arguments = function.get("arguments", "{}")
+    if isinstance(raw_arguments, str):
+        try:
+            arguments = json.loads(raw_arguments)
+        except (TypeError, ValueError) as exc:
+            raise APIError(f"invalid tool-call arguments: {exc}", cause=exc) from exc
+    else:
+        arguments = raw_arguments or {}
+    if not isinstance(arguments, dict):
+        raise APIError("tool-call arguments must be a JSON object")
     call_id = raw.get("id") if isinstance(raw.get("id"), str) else None
-    return ToolCall(name=name, arguments=arguments or {}, id=call_id)
+    return ToolCall(name=name, arguments=arguments, id=call_id)
 
 
 class BaseLLM(ABC):
